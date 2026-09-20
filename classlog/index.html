@@ -5,94 +5,179 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="수업로그 — 학생, 학급, 수업, 평가 및 활동 기록을 관리하는 Windows 데스크톱 애플리케이션">
   <title>수업로그</title>
+  <link rel="icon" type="image/png" href="/assets/classlog-icon.png">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="wrap">
-    <nav class="nav">
-      <a class="brand" href="/">
-        <span class="brand-mark" aria-hidden="true"></span>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="/classlog/">
+        <img class="brand-icon" src="/assets/classlog-icon.png" alt="수업로그 아이콘">
         <span>수업로그</span>
       </a>
-      <div class="nav-links">
+      <nav class="nav-links" aria-label="주요 메뉴">
         <a href="#features">기능</a>
         <a href="#google">Google 연동</a>
         <a href="/classlog/privacy.html">개인정보처리방침</a>
-      </div>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-split">
-          <div class="hero-copy">
-            <span class="eyebrow">Windows desktop app</span>
-            <h1>수업 기록을<br>더 단순하게.</h1>
-            <p>
-              수업로그는 학생, 학급, 수업, 평가와 활동 기록을 한 곳에서 관리하기 위한
-              Windows 데스크톱 애플리케이션입니다.
-            </p>
-            <div class="actions">
-              <a class="button primary" href="#google">Google 연동 보기</a>
-              <a class="button" href="/classlog/privacy.html">개인정보처리방침</a>
+  <main>
+    <section class="shell hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Windows desktop app</span>
+          <h1>수업 기록을<br>더 단순하게.</h1>
+          <p class="hero-lead">
+            수업로그는 학생, 학급, 수업, 평가와 활동 기록을 한 곳에서 관리하기 위한
+            Windows 데스크톱 애플리케이션입니다.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#google">Google 연동 보기</a>
+            <a class="button" href="/classlog/privacy.html">개인정보처리방침</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="수업로그 핵심 기능 요약">
+          <div class="panel-top">
+            <div class="panel-title">수업로그</div>
+            <div class="status"><span class="status-dot"></span>로컬 중심</div>
+          </div>
+
+          <div class="mini-stack">
+            <div class="mini-card">
+              <div class="mini-icon">01</div>
+              <div>
+                <strong>학생·학급 관리</strong>
+                <span>학생과 학급 정보를 한 곳에서 정리합니다.</span>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon">02</div>
+              <div>
+                <strong>수업·평가 기록</strong>
+                <span>수업과 평가 데이터를 필요한 구조로 관리합니다.</span>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon">03</div>
+              <div>
+                <strong>Google Drive 동기화</strong>
+                <span>여러 PC에서 같은 데이터를 이어서 사용할 수 있습니다.</span>
+              </div>
             </div>
           </div>
-          <div class="hero-visual">
-            <img
-              class="hero-icon"
-              src="/assets/classlog-icon.png"
-              alt="수업로그 앱 아이콘">
-          </div>
-        </div>
-      </section>
+        </aside>
+      </div>
+    </section>
 
-      <section id="features" class="grid" aria-label="주요 기능">
-        <article class="card">
-          <h3>학생·학급 관리</h3>
-          <p>학생과 학급 정보를 정리하고 필요한 기록에 연결합니다.</p>
-        </article>
-        <article class="card">
-          <h3>수업·평가 기록</h3>
-          <p>수업과 평가 데이터를 로컬에서 관리하고 필요한 형태로 내보냅니다.</p>
-        </article>
-        <article class="card">
-          <h3>활동 기록</h3>
-          <p>학생별 활동 내용을 유연한 필드와 기록 구조로 관리합니다.</p>
-        </article>
-      </section>
-
-      <section id="google" class="section">
-        <h2>Google Drive 동기화</h2>
+    <section id="features" class="shell section">
+      <div class="section-head">
+        <div class="section-kicker">주요 기능</div>
+        <h2>수업 기록에 필요한 흐름을 한 곳에.</h2>
         <p>
-          수업로그는 Google Drive API를 사용하여 사용자의 여러 PC 사이에서
-          애플리케이션 데이터를 동기화할 수 있습니다.
+          별도의 웹 서비스 없이 PC에서 기록을 관리하고, 필요한 데이터는 원하는 방식으로 내보낼 수 있습니다.
         </p>
-        <div class="card" style="margin-top:22px">
-          <h3>데이터는 사용자의 Google Drive에 저장됩니다.</h3>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-number">01</div>
+          <h3>학생·학급 관리</h3>
+          <p>학생과 학급 정보를 관리하고 수업, 평가, 활동 기록에 연결합니다.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-number">02</div>
+          <h3>수업·평가 기록</h3>
+          <p>수업과 평가 데이터를 로컬에서 관리하고 필요한 형태로 정리합니다.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-number">03</div>
+          <h3>활동 기록</h3>
+          <p>학생별 활동 내용을 유연한 필드 구조로 기록하고 다시 확인할 수 있습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="google" class="shell section">
+      <div class="section-head">
+        <div class="section-kicker">Google Drive</div>
+        <h2>여러 PC에서도 같은 기록을 이어서.</h2>
+        <p>
+          사용자가 Google 계정을 연결하면 수업로그는 Google Drive API를 이용해
+          앱 데이터를 동기화할 수 있습니다.
+        </p>
+      </div>
+
+      <div class="sync-card">
+        <div class="sync-copy">
+          <h3>데이터의 주 저장소는 사용자의 Google Drive입니다.</h3>
           <p>
             동기화 데이터는 로그인한 사용자의 Google Drive 앱 데이터 영역에 저장됩니다.
-            수업로그 개발자가 운영하는 별도 서버로 학생·수업·평가·활동 데이터를 전송하거나
-            저장하지 않습니다.
+            수업로그 개발자가 운영하는 별도의 서버에 학생, 수업, 평가 또는 활동 데이터를 저장하지 않습니다.
           </p>
+          <div class="notice">
+            <strong>권한 범위</strong><br>
+            수업로그는 기능 제공에 필요한 Google Drive 권한만 요청하며,
+            사용자는 Google 계정 설정에서 언제든지 접근 권한을 철회할 수 있습니다.
+          </div>
         </div>
-      </section>
 
-      <section class="section">
-        <h2>내보내기</h2>
+        <div class="sync-flow" aria-label="동기화 흐름">
+          <div class="flow-item">
+            <div class="flow-num">1</div>
+            <div>
+              <strong>Google 계정 연결</strong>
+              <span>브라우저에서 사용자가 직접 로그인하고 권한을 승인합니다.</span>
+            </div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-num">2</div>
+            <div>
+              <strong>앱 데이터 동기화</strong>
+              <span>수업로그 데이터가 사용자의 Google Drive 앱 데이터 영역과 동기화됩니다.</span>
+            </div>
+          </div>
+          <div class="flow-item">
+            <div class="flow-num">3</div>
+            <div>
+              <strong>다른 PC에서 이어서 사용</strong>
+              <span>같은 Google 계정으로 연결하면 저장된 데이터를 다시 불러올 수 있습니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="section-head">
+        <div class="section-kicker">내보내기</div>
+        <h2>필요할 때 파일로 꺼낼 수 있습니다.</h2>
         <p>
-          사용자는 수업로그의 데이터를 Excel 파일로 내보내거나,
-          지원되는 기능을 통해 Google Drive에 파일을 생성할 수 있습니다.
+          수업로그 데이터는 Excel 파일로 내보낼 수 있으며,
+          지원되는 기능을 통해 사용자의 Google Drive에 파일을 생성할 수도 있습니다.
         </p>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <span>© 2026 수업로그</span>
-      <span>
-        <a href="/classlog/privacy.html">개인정보처리방침</a>
-        &nbsp;·&nbsp;
-        <a href="/">전체 앱</a>
-      </span>
-    </footer>
-  </div>
+    <section class="shell">
+      <div class="cta">
+        <div>
+          <h3>개인정보와 Google 데이터 처리 방식이 궁금한가요?</h3>
+          <p>수업로그가 Google 사용자 데이터를 어떻게 사용하는지 개인정보처리방침에서 확인할 수 있습니다.</p>
+        </div>
+        <a class="button" href="/classlog/privacy.html">개인정보처리방침 보기</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <span>© 2026 수업로그</span>
+    <div class="footer-links">
+      <a href="/classlog/privacy.html">개인정보처리방침</a>
+      <a href="/">전체 앱</a>
+    </div>
+  </footer>
 </body>
 </html>

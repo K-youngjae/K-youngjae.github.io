@@ -3,47 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="K-youngjae가 만드는 작은 앱들의 안내 페이지입니다.">
+  <meta name="description" content="K-youngjae의 개인 소프트웨어 프로젝트 안내 페이지">
   <title>K-youngjae Apps</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="wrap">
-    <nav class="nav">
+  <header class="site-header">
+    <div class="shell nav">
       <a class="brand" href="/">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-fallback" aria-hidden="true"></span>
         <span>K-youngjae Apps</span>
       </a>
-    </nav>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <span class="eyebrow">Personal software projects</span>
-        <h1>작고 유용한 앱을<br>직접 만듭니다.</h1>
-        <p>
-          일상과 업무에서 실제로 쓰기 위한 개인 소프트웨어 프로젝트를 만들고 있습니다.
-          이 페이지는 각 앱의 소개와 개인정보처리방침을 제공합니다.
-        </p>
-      </section>
+  <main class="shell">
+    <section class="apps-hero">
+      <span class="eyebrow">Personal software projects</span>
+      <h1>작고 유용한 앱을<br>직접 만듭니다.</h1>
+      <p class="hero-lead">
+        실제로 쓰기 위한 개인 소프트웨어 프로젝트를 만들고 있습니다.
+        이 페이지는 각 앱의 기능과 개인정보처리방침을 안내합니다.
+      </p>
+    </section>
 
-      <section class="section">
-        <h2>Apps</h2>
-        <div class="app-list">
-          <a class="app-item" href="/classlog/">
-            <div>
-              <strong>수업로그</strong><br>
-              <span>학생·수업·평가·활동 기록을 관리하는 Windows 데스크톱 앱</span>
-            </div>
-            <span>보기 →</span>
-          </a>
+    <section class="app-list" aria-label="앱 목록">
+      <a class="app-item" href="/classlog/">
+        <img class="app-item-icon" src="/assets/classlog-icon.png" alt="">
+        <div>
+          <strong>수업로그</strong>
+          <span>학생·학급·수업·평가·활동 기록을 관리하는 Windows 데스크톱 앱</span>
         </div>
-      </section>
-    </main>
+        <div class="app-arrow">→</div>
+      </a>
+    </section>
+  </main>
 
-    <footer class="footer">
-      <span>© 2026 K-youngjae</span>
-      <span>Personal software projects</span>
-    </footer>
-  </div>
+  <footer class="shell footer">
+    <span>© 2026 K-youngjae</span>
+    <span>Personal software projects</span>
+  </footer>
 </body>
 </html>
