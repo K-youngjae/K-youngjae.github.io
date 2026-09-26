@@ -582,3 +582,241 @@ body {
     radial-gradient(circle at 86% 12%,rgba(117,108,255,.055),transparent 24rem),
     #141817 !important;
 }
+
+
+/* ===== V15.2 READABILITY PASS =====
+   The previous dark palette was too quiet at desktop scale:
+   microcopy was 8–10px, mono labels were thin, and secondary text sat too close
+   to the background. This pass keeps the mood but raises legibility.
+*/
+:root{
+  --muted:#b6bcb8;
+  --quiet:#929b95;
+  --line:rgba(241,240,234,.18);
+}
+
+body{
+  background:
+    radial-gradient(circle at 14% 1%,rgba(49,91,73,.18),transparent 28rem),
+    radial-gradient(circle at 86% 12%,rgba(117,108,255,.06),transparent 24rem),
+    #151a18 !important;
+}
+
+.mono,
+.section-head,
+.fact-row span,
+.personal-card>span,
+.seoul-card dt,
+.project-meta,
+.stack,
+.screen-toolbar,
+.screen-bottom,
+.system-message,
+footer{
+  font-weight:500;
+}
+
+.topbar nav{
+  font-size:13px;
+  color:#c0c6c1;
+}
+.nav-command{font-size:12px;color:#b1b8b3}
+
+.eyebrow{
+  font-size:11px;
+  color:#97b9aa;
+}
+.hero-sub{
+  font-size:15px;
+  line-height:1.7;
+  color:#b9bfbb;
+}
+.hero-actions a,
+.hero-actions button{
+  font-size:12px;
+}
+
+.seoul-card-head{
+  min-height:44px;
+  font-size:10px;
+  color:#a0a8a2;
+}
+.korean-toggle{font-size:9px;color:#adb4af}
+.seoul-card dl>div{
+  padding:14px 13px;
+  grid-template-columns:138px 1fr;
+}
+.seoul-card dt{
+  font-size:10px;
+  color:#8f9992;
+}
+.seoul-card dd{
+  font-size:12px;
+  color:#f0efe9;
+}
+.seoul-footer{
+  padding:12px 13px;
+  font-size:10px;
+  color:#9ba39d;
+}
+.seoul-footer button{font-size:10px;color:#9fc7b5}
+
+.ticker{
+  min-height:66px;
+}
+.ticker>span{
+  font-size:10px;
+  color:#8f9992;
+}
+.ticker strong{
+  font-size:13px;
+  color:#e8e7e1;
+}
+.ticker-button{
+  font-size:10px;
+  color:#9fc7b5;
+}
+
+.section-head{
+  font-size:10px;
+  color:#929b95;
+  letter-spacing:.065em;
+}
+
+.fact-row{
+  grid-template-columns:205px 1fr;
+  gap:26px;
+  padding:19px 0;
+}
+.fact-row span{
+  font-size:10px;
+  color:#929b95;
+}
+.fact-row strong{
+  font-size:14px;
+  line-height:1.45;
+  color:#f0efe9;
+  font-weight:550;
+}
+
+/* Actual 2px error:
+   move the sentence by exactly 2px, then physically return it to zero on click.
+   The lime is only a short confirmation, not the main effect. */
+.misaligned{
+  position:relative;
+  top:2px;
+  transform:none !important;
+  transition:top .18s ease,color .28s ease;
+}
+.fact-button.fixed .misaligned{
+  top:0;
+  transform:none !important;
+  color:#f0efe9 !important;
+  animation:alignment-confirm .55s ease;
+}
+@keyframes alignment-confirm{
+  0%{color:#ddf45b}
+  100%{color:#f0efe9}
+}
+
+.tiny-panel{
+  padding:20px;
+}
+.tiny-panel>span{
+  margin-bottom:17px;
+  font-size:10px;
+  color:#919a94;
+}
+.tiny-panel button{
+  padding:11px 0;
+  font-size:12px;
+  color:#e0e3df;
+}
+
+.personal-card{
+  min-height:198px;
+  padding-top:24px;
+  padding-bottom:24px;
+}
+.personal-card>span{
+  margin-bottom:28px;
+  font-size:10px;
+  color:#929b95;
+}
+.personal-card>strong{
+  font-size:20px;
+  line-height:1.2;
+}
+.personal-card>small{
+  font-size:11.5px;
+  line-height:1.55;
+  color:#a3aba5;
+}
+.card-action{
+  margin-top:17px;
+  font-size:11px;
+  color:#9fc7b5;
+}
+
+.project-meta,
+.stack{
+  font-size:10px;
+}
+.project-blurb{
+  font-size:14px;
+  line-height:1.68;
+}
+.project-bottom blockquote{
+  font-size:12px;
+  line-height:1.6;
+}
+.project-bottom blockquote span{
+  font-size:10px;
+}
+.project-link{
+  font-size:12.5px;
+}
+
+.screen-toolbar{
+  font-size:9px;
+  color:#a3aaa5;
+}
+.view-button{
+  font-size:8px;
+}
+.screen-bottom{
+  font-size:9.5px;
+  color:#9ba39d;
+}
+.screen-bottom>a{
+  font-size:10.5px;
+}
+
+.utility-button{
+  font-size:10px;
+  color:#c3c9c4;
+}
+.system-message{
+  font-size:10px;
+  color:#8f9891;
+}
+
+.contact>div>p:first-child{
+  font-size:10px;
+  color:#929b95;
+}
+.contact .optional-copy{
+  font-size:13px;
+  color:#a8afa9;
+}
+footer{
+  font-size:11px;
+  color:#8e9790;
+}
+
+@media(max-width:620px){
+  .fact-row{grid-template-columns:1fr;gap:8px}
+  .hero-sub{font-size:14px}
+  .seoul-card dt{font-size:9px}
+  .seoul-card dd{font-size:11px}
+}
