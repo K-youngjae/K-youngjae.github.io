@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>K-youngjae</title>
   <meta name="description" content="Independent software projects by K-youngjae.">
-  <meta name="theme-color" content="#f2f2ef">
+  <meta name="theme-color" content="#efefeb">
   <meta property="og:type" content="website">
   <meta property="og:title" content="K-youngjae">
   <meta property="og:description" content="Independent software projects by K-youngjae.">
@@ -28,54 +28,67 @@
 
   <main>
     <section class="hero">
-      <div class="hero-title reveal">
-        <p class="eyebrow">Independent software</p>
-        <h1>Software projects,<br>designed and built independently.</h1>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Independent software · Seoul</p>
+        <h1>Small software for things<br>I’d rather not manage by hand.</h1>
       </div>
-      <div class="hero-note reveal">
-        <p>Small desktop tools, interfaces and experiments.</p>
-      </div>
+
+      <aside class="now-card reveal" aria-label="Currently">
+        <span class="now-dot" aria-hidden="true"></span>
+        <div>
+          <p class="now-label">NOW</p>
+          <p>Building ClassLog.<br><span>Trying not to add “just one more feature.”</span></p>
+        </div>
+      </aside>
     </section>
 
     <section id="work" class="work">
       <div class="section-head reveal">
         <span>Selected work</span>
-        <span>01</span>
+        <span>01 · one for now</span>
       </div>
 
       <article class="project reveal">
         <div class="project-copy">
-          <div class="project-heading">
-            <img src="/classlog/assets/icon.png" alt="" class="project-icon">
-            <div>
-              <p class="project-type">Windows desktop app · 2026</p>
-              <h2>ClassLog</h2>
+          <div>
+            <div class="project-title-row">
+              <img src="/classlog/assets/icon.png" alt="" class="project-icon">
+              <div>
+                <p class="project-type">Windows desktop app · 2026</p>
+                <h2>ClassLog</h2>
+              </div>
             </div>
+
+            <p class="project-description">
+              A classroom record tool for classes, attendance,
+              assessments and student activity.
+            </p>
           </div>
 
-          <p class="project-description">
-            A classroom record tool for classes, attendance, assessments
-            and student activity.
-          </p>
-
-          <div class="project-details">
-            <span>Design & development</span>
-            <span>Tauri · React · Rust</span>
+          <div class="project-bottom">
+            <p class="project-aside">
+              Built after “I’ll just use a spreadsheet” stopped being a plan.
+            </p>
+            <div class="project-details">
+              <span>Design & development</span>
+              <span>Tauri · React · Rust</span>
+            </div>
+            <a class="project-link" href="/classlog/">
+              View project <span aria-hidden="true">↗</span>
+            </a>
           </div>
-
-          <a class="project-link" href="/classlog/">
-            View project <span aria-hidden="true">↗</span>
-          </a>
         </div>
 
         <a class="project-preview" href="/classlog/" aria-label="Open ClassLog project">
-          <div class="preview-label">
+          <span class="tape">ACTUAL APP</span>
+          <div class="preview-caption">
             <span>ClassLog</span>
             <span>Attendance</span>
           </div>
           <div class="preview-frame">
             <img src="/classlog/assets/screens/attendance.png" alt="ClassLog attendance screen">
           </div>
+          <span class="tiny-note" aria-hidden="true">yes, it’s this tidy in real life →</span>
         </a>
       </article>
     </section>
@@ -86,17 +99,17 @@
         <span>02</span>
       </div>
 
-      <div class="about-content">
+      <div class="about-grid">
         <p class="about-lead reveal">
-          I make focused software with a clear purpose.
+          I like software with one clear job — and no manual required.
         </p>
+
         <div class="about-copy reveal">
           <p>
-            I work across interface design and implementation, building
-            personal software projects from the first screen to the final build.
+            I design and build personal software projects from interface to implementation.
           </p>
           <p>
-            This site is a small archive of that work.
+            Useful first. Polished second. Clever only when it helps.
           </p>
         </div>
       </div>
@@ -109,7 +122,7 @@
       </div>
 
       <div class="contact-row reveal">
-        <p>For questions or anything else.</p>
+        <p>Email still works. Remarkably.</p>
         <a href="mailto:kyjdevelop@gmail.com">
           kyjdevelop@gmail.com <span aria-hidden="true">↗</span>
         </a>
@@ -119,6 +132,7 @@
 
   <footer>
     <span>© 2026 K-youngjae</span>
+    <span class="footer-note">No popups. No newsletter. Nice.</span>
     <a href="/classlog/privacy.html">Privacy</a>
   </footer>
 
