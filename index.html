@@ -16,14 +16,17 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
   <header class="topbar">
     <a class="brand" href="/" aria-label="Youngjae Kim home">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span>Youngjae Kim</span>
+      <span>YK</span>
     </a>
     <nav aria-label="Primary navigation">
       <a href="#me">Me</a>
       <a href="#made">Made</a>
+      <button class="nav-command" id="command-button" type="button">⌘ /</button>
       <a href="mailto:kyjdevelop@gmail.com">Email ↗</a>
     </nav>
   </header>
@@ -32,24 +35,27 @@
     <section class="hero">
       <div class="hero-copy reveal">
         <p class="mono eyebrow">SEOUL, KOREA · <span id="seoul-time">--:--</span></p>
-        <h1>I make things.</h1>
-        <p class="hero-sub">
-          Software, tools, and occasionally a needlessly elaborate solution to a very small problem.
-        </p>
+        <h1>Youngjae Kim</h1>
+        <p class="hero-line">I make things.</p>
+        <p class="hero-sub">Software, tools, and other things I got curious enough to build.</p>
+
+        <div class="hero-actions">
+          <a href="#made">See what I made ↓</a>
+          <button id="poke-button" type="button">poke this page</button>
+        </div>
       </div>
 
-      <aside class="seoul-card reveal" aria-label="A few local details">
+      <aside class="seoul-card reveal" id="seoul-card" aria-label="A few local details">
         <div class="seoul-card-head">
           <span class="live-dot" aria-hidden="true"></span>
           <span class="mono">LOCAL CONDITIONS</span>
-          <span class="mono" id="seoul-period">SEOUL</span>
+          <button class="mono korean-toggle" id="korean-toggle" type="button">한/EN</button>
         </div>
-
         <dl>
-          <div><dt>USUAL HABITAT</dt><dd>집</dd></div>
-          <div><dt>OCCASIONALLY OUTSIDE</dt><dd>연남 · 성수</dd></div>
-          <div><dt>AFTER DARK</dt><dd>한강 &gt; most things</dd></div>
-          <div><dt>CAFFEINE DELIVERY</dt><dd>Latte</dd></div>
+          <div><dt>USUAL HABITAT</dt><dd data-en="home" data-ko="집">집</dd></div>
+          <div><dt>OCCASIONALLY OUTSIDE</dt><dd data-en="Yeonnam · Seongsu" data-ko="연남 · 성수">연남 · 성수</dd></div>
+          <div><dt>AFTER DARK</dt><dd data-en="Han River > most things" data-ko="한강 > 웬만한 것들">한강 &gt; most things</dd></div>
+          <div><dt>CAFFEINE DELIVERY</dt><dd data-en="Latte" data-ko="라떼">Latte</dd></div>
         </dl>
       </aside>
     </section>
@@ -62,57 +68,44 @@
 
     <section id="me" class="me">
       <div class="section-head reveal">
-        <span class="mono">01 / ME, ROUGHLY</span>
-        <span class="mono">HUMAN · SEOUL</span>
+        <span class="mono">01 / ABOUT</span>
+        <span class="mono">ENGINEER · HUMAN · SEOUL</span>
       </div>
 
       <div class="intro-grid">
         <div class="intro-copy reveal">
-          <h2>Youngjae Kim</h2>
-          <p class="role">Engineer. Also, apparently, a person who makes websites for himself.</p>
+          <h2>Curious about too many things.<br>Lazy in a very productive way.</h2>
           <p>
-            Curious about too many things, suspicious of repetitive work,
-            and unusually bothered by tiny inconsistencies.
+            Engineer by day. At other times: comparing things that probably did not need comparing,
+            chasing small details, and trying to make repetitive work disappear.
           </p>
         </div>
 
         <div class="quirks reveal">
-          <div class="quirk">
-            <span class="mono">IF IT ANNOYS ME TWICE</span>
-            <strong>I start thinking about automating it.</strong>
-          </div>
-          <div class="quirk">
-            <span class="mono">SIMPLE QUESTION</span>
-            <strong>Frequently becomes a research project.</strong>
-          </div>
-          <div class="quirk">
-            <span class="mono">CAN IGNORE</span>
-            <strong>Many things.</strong>
-          </div>
-          <div class="quirk">
-            <span class="mono">CANNOT IGNORE</span>
-            <strong>A 2px alignment error.</strong>
-          </div>
+          <div class="quirk"><span class="mono">IF IT ANNOYS ME TWICE</span><strong>I start thinking about automating it.</strong></div>
+          <div class="quirk"><span class="mono">SIMPLE QUESTION</span><strong>Frequently becomes a research project.</strong></div>
+          <div class="quirk"><span class="mono">CAN IGNORE</span><strong>Many things.</strong></div>
+          <div class="quirk"><span class="mono">CANNOT IGNORE</span><strong>A 2px alignment error.</strong></div>
         </div>
       </div>
 
       <div class="personal-grid reveal">
-        <article>
+        <article data-bob>
           <span class="mono">PLAYING</span>
           <strong>Overwatch</strong>
           <small>because peaceful hobbies were somehow not selected</small>
         </article>
-        <article>
+        <article data-bob>
           <span class="mono">LISTENING</span>
           <strong>Muse / Oasis</strong>
           <small>guitars remain an excellent technology</small>
         </article>
-        <article>
+        <article data-bob>
           <span class="mono">DREAM GARAGE</span>
           <strong>Aston Martin DB</strong>
           <small><button id="garage-button" type="button">check inventory →</button></small>
         </article>
-        <article>
+        <article data-bob>
           <span class="mono">DESK INVENTORY</span>
           <strong>Figures + speakers</strong>
           <small>the essentials, apparently</small>
@@ -175,8 +168,8 @@
 
     <section class="playground">
       <div class="section-head reveal">
-        <span class="mono">03 / SMALL BUTTONS WITH QUESTIONABLE VALUE</span>
-        <span class="mono">OPTIONAL</span>
+        <span class="mono">03 / USELESS CONTROLS</span>
+        <span class="mono">MOSTLY HARMLESS</span>
       </div>
 
       <div class="playground-row reveal">
@@ -184,16 +177,8 @@
           <span class="mono">EFFICIENCY MODE</span>
           <span class="switch" aria-hidden="true"><i></i></span>
         </button>
-
-        <button id="home-button" class="utility-button" type="button">
-          <span class="mono">HOME MODE</span>
-          <span aria-hidden="true">⌂</span>
-        </button>
-
-        <button id="chaos-button" class="utility-button danger" type="button">
-          <span class="mono">DO NOT PRESS</span>
-        </button>
-
+        <button id="home-button" class="utility-button" type="button"><span class="mono">HOME MODE</span><span aria-hidden="true">⌂</span></button>
+        <button id="chaos-button" class="utility-button danger" type="button"><span class="mono">DO NOT PRESS</span></button>
         <p id="system-message" class="mono system-message">nothing suspicious happening</p>
       </div>
     </section>
@@ -225,6 +210,22 @@
       <div class="garage-rule"></div>
       <p class="garage-wish">Wanted: Aston Martin DB series</p>
       <p class="garage-small mono">STATUS: EMOTIONALLY OWNED · FINANCIALLY PENDING</p>
+    </form>
+  </dialog>
+
+  <dialog id="command-dialog" class="command-dialog">
+    <form method="dialog">
+      <div class="dialog-head">
+        <span class="mono">TINY COMMAND CENTER</span>
+        <button aria-label="Close">×</button>
+      </div>
+      <div class="command-list">
+        <button type="button" data-command="home"><span class="mono">H</span><strong>Home mode</strong><small>stay exactly where you are</small></button>
+        <button type="button" data-command="efficiency"><span class="mono">E</span><strong>Efficiency mode</strong><small>remove unnecessary words</small></button>
+        <button type="button" data-command="garage"><span class="mono">G</span><strong>Dream garage</strong><small>financially irresponsible tab</small></button>
+        <button type="button" data-command="chaos"><span class="mono">C</span><strong>Minor chaos</strong><small>bad idea, obviously</small></button>
+      </div>
+      <p class="command-hint mono">TIP: H / E / G / C ALSO WORK WITHOUT OPENING THIS</p>
     </form>
   </dialog>
 
