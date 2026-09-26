@@ -3,96 +3,152 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>K-youngjae — I make things</title>
-  <meta name="description" content="Things made by K-youngjae.">
-  <meta name="theme-color" content="#f2f0e9">
+  <title>Youngjae Kim</title>
+  <meta name="description" content="Youngjae Kim — things I make, like, and overthink.">
+  <meta name="theme-color" content="#f1efe8">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="K-youngjae — I make things">
-  <meta property="og:description" content="Software, tools, and other projects.">
+  <meta property="og:title" content="Youngjae Kim">
+  <meta property="og:description" content="Things I make, like, and overthink.">
   <meta property="og:image" content="https://k-youngjae.github.io/classlog/assets/screens/attendance.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
-
 <body>
   <header class="topbar">
-    <a class="brand" href="/" aria-label="K-youngjae home">
-      <span class="brand-dot" aria-hidden="true"></span>
-      <span>K-youngjae</span>
+    <a class="brand" href="/" aria-label="Youngjae Kim home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Youngjae Kim</span>
     </a>
     <nav aria-label="Primary navigation">
-      <a href="#made">Made</a>
       <a href="#me">Me</a>
+      <a href="#made">Made</a>
       <a href="mailto:kyjdevelop@gmail.com">Email ↗</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-main reveal">
-        <p class="mono eyebrow">HELLO, INTERNET.</p>
+      <div class="hero-copy reveal">
+        <p class="mono eyebrow">SEOUL, KOREA · <span id="seoul-time">--:--</span></p>
         <h1>I make things.</h1>
-        <p class="hero-sub">Software, tools, and other projects.</p>
+        <p class="hero-sub">
+          Software, tools, and occasionally a needlessly elaborate solution to a very small problem.
+        </p>
       </div>
 
-      <aside class="dashboard reveal" aria-label="Current status">
-        <div class="dashboard-head">
-          <span class="pulse" aria-hidden="true"></span>
-          <span class="mono">CURRENT STATUS</span>
-          <span class="mono time-readout" id="local-time">--:--</span>
+      <aside class="seoul-card reveal" aria-label="A few local details">
+        <div class="seoul-card-head">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span class="mono">LOCAL CONDITIONS</span>
+          <span class="mono" id="seoul-period">SEOUL</span>
         </div>
+
         <dl>
-          <div><dt>BUILDING</dt><dd>ClassLog</dd></div>
-          <div><dt>PLAYING</dt><dd>Overwatch</dd></div>
-          <div><dt>LISTENING</dt><dd>Something with guitars</dd></div>
-          <div><dt>DREAM GARAGE</dt><dd><button class="text-button" id="garage-button" type="button">Open inventory →</button></dd></div>
+          <div><dt>USUAL HABITAT</dt><dd>집</dd></div>
+          <div><dt>OCCASIONALLY OUTSIDE</dt><dd>연남 · 성수</dd></div>
+          <div><dt>AFTER DARK</dt><dd>한강 &gt; most things</dd></div>
+          <div><dt>CAFFEINE DELIVERY</dt><dd>Latte</dd></div>
         </dl>
       </aside>
     </section>
 
-    <section class="controls reveal" aria-label="Site controls">
-      <button class="control-button" id="efficiency-button" type="button">
-        <span class="mono">EFFICIENCY MODE</span>
-        <span class="switch" aria-hidden="true"><i></i></span>
-      </button>
-      <button class="danger-button mono" id="chaos-button" type="button">DO NOT PRESS</button>
-      <p class="control-note mono" id="control-note">everything operating within normal parameters</p>
+    <section class="ticker reveal" aria-label="Random thought">
+      <span class="mono">CURRENT RABBIT HOLE</span>
+      <strong id="rabbit-hole">making this page less embarrassing</strong>
+      <button id="another-thought" type="button" class="ticker-button mono">ANOTHER ONE ↻</button>
+    </section>
+
+    <section id="me" class="me">
+      <div class="section-head reveal">
+        <span class="mono">01 / ME, ROUGHLY</span>
+        <span class="mono">HUMAN · SEOUL</span>
+      </div>
+
+      <div class="intro-grid">
+        <div class="intro-copy reveal">
+          <h2>Youngjae Kim</h2>
+          <p class="role">Engineer. Also, apparently, a person who makes websites for himself.</p>
+          <p>
+            Curious about too many things, suspicious of repetitive work,
+            and unusually bothered by tiny inconsistencies.
+          </p>
+        </div>
+
+        <div class="quirks reveal">
+          <div class="quirk">
+            <span class="mono">IF IT ANNOYS ME TWICE</span>
+            <strong>I start thinking about automating it.</strong>
+          </div>
+          <div class="quirk">
+            <span class="mono">SIMPLE QUESTION</span>
+            <strong>Frequently becomes a research project.</strong>
+          </div>
+          <div class="quirk">
+            <span class="mono">CAN IGNORE</span>
+            <strong>Many things.</strong>
+          </div>
+          <div class="quirk">
+            <span class="mono">CANNOT IGNORE</span>
+            <strong>A 2px alignment error.</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="personal-grid reveal">
+        <article>
+          <span class="mono">PLAYING</span>
+          <strong>Overwatch</strong>
+          <small>because peaceful hobbies were somehow not selected</small>
+        </article>
+        <article>
+          <span class="mono">LISTENING</span>
+          <strong>Muse / Oasis</strong>
+          <small>guitars remain an excellent technology</small>
+        </article>
+        <article>
+          <span class="mono">DREAM GARAGE</span>
+          <strong>Aston Martin DB</strong>
+          <small><button id="garage-button" type="button">check inventory →</button></small>
+        </article>
+        <article>
+          <span class="mono">DESK INVENTORY</span>
+          <strong>Figures + speakers</strong>
+          <small>the essentials, apparently</small>
+        </article>
+      </div>
     </section>
 
     <section id="made" class="made">
-      <div class="section-label reveal">
-        <span class="mono">01 / THINGS I MADE</span>
+      <div class="section-head reveal">
+        <span class="mono">02 / THINGS I MADE</span>
         <span class="mono">CURRENT COUNT: 1</span>
       </div>
 
-      <article class="classlog-card reveal">
+      <article class="project reveal">
         <div class="project-copy">
           <div>
             <div class="project-title-row">
-              <img src="/classlog/assets/icon.png" class="project-icon" alt="">
+              <img src="/classlog/assets/icon.png" alt="" class="project-icon">
               <div>
                 <p class="mono project-meta">WINDOWS · 2026</p>
                 <h2>ClassLog</h2>
               </div>
             </div>
-
-            <p class="project-blurb optional-copy">
-              A classroom record tool for classes, attendance,
-              assessments and student activity.
+            <p class="project-blurb">
+              A classroom record tool for classes, attendance, assessments,
+              and student activity.
             </p>
           </div>
 
           <div class="project-bottom">
-            <blockquote class="project-origin optional-copy">
+            <blockquote>
               “I’ll just use a spreadsheet.”
               <span>— a sentence that did not age well</span>
             </blockquote>
-            <div class="project-footer">
-              <span class="mono">TAURI · REACT · RUST</span>
-              <a href="/classlog/">Open project ↗</a>
-            </div>
+            <p class="mono stack">TAURI · REACT · RUST</p>
+            <a href="/classlog/" class="project-link">Open project ↗</a>
           </div>
         </div>
 
@@ -117,55 +173,34 @@
       </article>
     </section>
 
-    <section id="me" class="me">
-      <div class="section-label reveal">
-        <span class="mono">02 / THE PERSON RESPONSIBLE</span>
-        <span class="mono">PROBABLY OVERTHINKING SOMETHING</span>
+    <section class="playground">
+      <div class="section-head reveal">
+        <span class="mono">03 / SMALL BUTTONS WITH QUESTIONABLE VALUE</span>
+        <span class="mono">OPTIONAL</span>
       </div>
 
-      <div class="me-layout">
-        <div class="me-copy reveal">
-          <h2>
-            Curious about too many things.<br>
-            Lazy in a very productive way.
-          </h2>
-          <p class="optional-copy">
-            I like figuring out how things work, making repetitive work disappear,
-            and spending unreasonable amounts of time on details that absolutely
-            could have been left alone.
-          </p>
-        </div>
+      <div class="playground-row reveal">
+        <button id="efficiency-button" class="utility-button" type="button">
+          <span class="mono">EFFICIENCY MODE</span>
+          <span class="switch" aria-hidden="true"><i></i></span>
+        </button>
 
-        <div class="traits reveal" aria-label="Traits">
-          <div class="trait"><span class="mono">CURIOSITY</span><strong>high</strong><i style="--level:92%"></i></div>
-          <div class="trait"><span class="mono">EFFICIENCY BRAIN</span><strong>dangerously high</strong><i style="--level:97%"></i></div>
-          <div class="trait"><span class="mono">PATIENCE FOR REPETITION</span><strong>not found</strong><i style="--level:8%"></i></div>
-          <div class="trait"><span class="mono">RABBIT HOLES</span><strong>frequent</strong><i style="--level:84%"></i></div>
-        </div>
-      </div>
+        <button id="home-button" class="utility-button" type="button">
+          <span class="mono">HOME MODE</span>
+          <span aria-hidden="true">⌂</span>
+        </button>
 
-      <div class="likes reveal">
-        <div class="like-card">
-          <span class="mono">GAME</span>
-          <strong>Overwatch</strong>
-          <small>because apparently calm hobbies were available</small>
-        </div>
-        <div class="like-card">
-          <span class="mono">SOUND</span>
-          <strong>Rock bands</strong>
-          <small>more guitars is usually the answer</small>
-        </div>
-        <div class="like-card">
-          <span class="mono">CAR</span>
-          <strong>Aston Martin</strong>
-          <small>current ownership status: emotionally</small>
-        </div>
+        <button id="chaos-button" class="utility-button danger" type="button">
+          <span class="mono">DO NOT PRESS</span>
+        </button>
+
+        <p id="system-message" class="mono system-message">nothing suspicious happening</p>
       </div>
     </section>
 
     <section class="contact reveal">
       <div>
-        <p class="mono">03 / CONTACT</p>
+        <p class="mono">04 / CONTACT</p>
         <h2>Email still works.</h2>
         <p class="optional-copy">A surprisingly durable technology.</p>
       </div>
@@ -174,8 +209,8 @@
   </main>
 
   <footer>
-    <span>© 2026 K-youngjae</span>
-    <span class="footer-joke">No cookies. I ate them.</span>
+    <span>© 2026 Youngjae Kim</span>
+    <span class="footer-note">Made in Seoul. Mostly at home.</span>
     <a href="/classlog/privacy.html">Privacy</a>
   </footer>
 
@@ -188,8 +223,8 @@
       <div class="garage-count">0</div>
       <p>cars currently owned</p>
       <div class="garage-rule"></div>
-      <p class="garage-wish">Wanted: Aston Martin</p>
-      <p class="garage-small mono">STATUS: FINANCIALLY INCONVENIENT</p>
+      <p class="garage-wish">Wanted: Aston Martin DB series</p>
+      <p class="garage-small mono">STATUS: EMOTIONALLY OWNED · FINANCIALLY PENDING</p>
     </form>
   </dialog>
 

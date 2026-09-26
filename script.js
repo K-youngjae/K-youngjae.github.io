@@ -9,43 +9,71 @@ if ('IntersectionObserver' in window) {
       }
     });
   }, { threshold: 0.12 });
-
   reveals.forEach((el) => observer.observe(el));
 } else {
   reveals.forEach((el) => el.classList.add('is-visible'));
 }
 
-const efficiencyButton = document.querySelector('#efficiency-button');
-const chaosButton = document.querySelector('#chaos-button');
-const controlNote = document.querySelector('#control-note');
+const seoulTime = document.querySelector('#seoul-time');
+const seoulPeriod = document.querySelector('#seoul-period');
+const rabbitHole = document.querySelector('#rabbit-hole');
+const anotherThought = document.querySelector('#another-thought');
 const garageButton = document.querySelector('#garage-button');
 const garageDialog = document.querySelector('#garage-dialog');
-const timeReadout = document.querySelector('#local-time');
+const efficiencyButton = document.querySelector('#efficiency-button');
+const homeButton = document.querySelector('#home-button');
+const chaosButton = document.querySelector('#chaos-button');
+const systemMessage = document.querySelector('#system-message');
 const classlogScreen = document.querySelector('#classlog-screen');
 const viewButtons = document.querySelectorAll('.view-button');
 
-efficiencyButton?.addEventListener('click', () => {
-  document.body.classList.toggle('efficiency');
-  const on = document.body.classList.contains('efficiency');
-  controlNote.textContent = on
-    ? 'unnecessary words successfully removed'
-    : 'everything operating within normal parameters';
-});
+const thoughts = [
+  'making this page less embarrassing',
+  'why this button feels 2px too low',
+  'something that should have taken ten minutes',
+  'whether this could be automated',
+  'a comparison nobody asked for',
+  'one very specific implementation detail'
+];
 
-chaosButton?.addEventListener('click', () => {
-  document.body.classList.toggle('chaos');
-  const on = document.body.classList.contains('chaos');
-  chaosButton.textContent = on ? 'OKAY, UNPRESS' : 'DO NOT PRESS';
-  controlNote.textContent = on
-    ? 'minor aesthetic instability detected'
-    : (document.body.classList.contains('efficiency')
-        ? 'unnecessary words successfully removed'
-        : 'everything operating within normal parameters');
-});
+function randomThought() {
+  if (!rabbitHole) return;
+  const current = rabbitHole.textContent;
+  const pool = thoughts.filter((item) => item !== current);
+  rabbitHole.textContent = pool[Math.floor(Math.random() * pool.length)];
+}
 
-garageButton?.addEventListener('click', () => {
-  garageDialog?.showModal();
-});
+anotherThought?.addEventListener('click', randomThought);
+
+function updateSeoulClock() {
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Seoul',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  }).format(now);
+
+  const hour = Number(new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Seoul',
+    hour: '2-digit',
+    hour12: false
+  }).format(now));
+
+  if (seoulTime) seoulTime.textContent = parts;
+  if (seoulPeriod) {
+    seoulPeriod.textContent =
+      hour >= 19 || hour < 5 ? 'SEOUL / AFTER DARK' :
+      hour < 12 ? 'SEOUL / MORNING' :
+      hour < 18 ? 'SEOUL / DAY' :
+      'SEOUL / EVENING';
+  }
+}
+
+updateSeoulClock();
+setInterval(updateSeoulClock, 30000);
+
+garageButton?.addEventListener('click', () => garageDialog?.showModal());
 
 viewButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -56,15 +84,31 @@ viewButtons.forEach((button) => {
   });
 });
 
-function updateClock() {
-  if (!timeReadout) return;
-  const now = new Date();
-  timeReadout.textContent = new Intl.DateTimeFormat('en-GB', {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false
-  }).format(now);
-}
+efficiencyButton?.addEventListener('click', () => {
+  document.body.classList.toggle('efficiency');
+  systemMessage.textContent = document.body.classList.contains('efficiency')
+    ? 'unnecessary words successfully removed'
+    : 'nothing suspicious happening';
+});
 
-updateClock();
-setInterval(updateClock, 30000);
+homeButton?.addEventListener('click', () => {
+  document.body.classList.toggle('home-mode');
+  systemMessage.textContent = document.body.classList.contains('home-mode')
+    ? '밖에 나갈 계획: 없음'
+    : 'nothing suspicious happening';
+});
+
+chaosButton?.addEventListener('click', () => {
+  document.body.classList.toggle('chaos');
+  const on = document.body.classList.contains('chaos');
+  chaosButton.querySelector('span').textContent = on ? 'OKAY, UNPRESS' : 'DO NOT PRESS';
+  systemMessage.textContent = on
+    ? 'minor aesthetic instability detected'
+    : 'nothing suspicious happening';
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key.toLowerCase() === 'h' && !['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)) {
+    homeButton?.click();
+  }
+});
