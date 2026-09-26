@@ -3,153 +3,227 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>K-youngjae — Things I Make</title>
-  <meta name="description" content="Things made by K-youngjae.">
-  <meta name="theme-color" content="#efeee8">
+  <title>K-youngjae — I make things</title>
+  <meta name="description" content="A small corner of the internet for things K-youngjae makes, likes, and overthinks.">
+  <meta name="theme-color" content="#f2f0e9">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="K-youngjae — Things I Make">
-  <meta property="og:description" content="Things made by K-youngjae.">
+  <meta property="og:title" content="K-youngjae — I make things">
+  <meta property="og:description" content="Things I make, like, and probably overthink.">
   <meta property="og:image" content="https://k-youngjae.github.io/classlog/assets/screens/attendance.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <a class="name" href="/">K-youngjae</a>
-    <nav aria-label="Primary">
-      <a href="#things">Things</a>
-      <a href="#about">About</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="K-youngjae home">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span>K-youngjae</span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <a href="#made">Made</a>
+      <a href="#me">Me</a>
       <a href="mailto:kyjdevelop@gmail.com">Email ↗</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">MAKER / TINKERER / OCCASIONAL OVERTHINKER</p>
+      <div class="hero-main reveal">
+        <p class="mono eyebrow">HELLO, INTERNET.</p>
         <h1>
           I make things.<br>
-          Usually because the existing way
-          <em>annoys me.</em>
+          Mostly because
+          <span class="scribble">annoying things</span>
+          are hard to ignore.
         </h1>
+        <p class="hero-sub">
+          Not a studio. Not a startup. Just one person with too many tabs open.
+        </p>
       </div>
 
-      <aside class="status-board reveal" aria-label="Currently">
-        <div class="status-title">
-          <span class="status-light"></span>
-          <span>CURRENTLY</span>
+      <aside class="dashboard reveal" aria-label="Current status">
+        <div class="dashboard-head">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="mono">CURRENT STATUS</span>
+          <span class="mono time-readout" id="local-time">--:--</span>
         </div>
+
         <dl>
-          <div><dt>BUILDING</dt><dd>ClassLog</dd></div>
-          <div><dt>PLAYING</dt><dd>Overwatch</dd></div>
-          <div><dt>LISTENING</dt><dd>Loud guitars</dd></div>
+          <div>
+            <dt>BUILDING</dt>
+            <dd>ClassLog</dd>
+          </div>
+          <div>
+            <dt>PLAYING</dt>
+            <dd>Overwatch</dd>
+          </div>
+          <div>
+            <dt>LISTENING</dt>
+            <dd>Something with guitars</dd>
+          </div>
+          <div>
+            <dt>DREAM GARAGE</dt>
+            <dd><button class="text-button" id="garage-button" type="button">Open inventory →</button></dd>
+          </div>
         </dl>
       </aside>
     </section>
 
-    <section id="things" class="things">
-      <div class="section-head reveal">
-        <span>THINGS I’VE MADE</span>
-        <span>001</span>
+    <section class="controls reveal" aria-label="Site controls">
+      <button class="control-button" id="efficiency-button" type="button">
+        <span class="mono">EFFICIENCY MODE</span>
+        <span class="switch" aria-hidden="true"><i></i></span>
+      </button>
+
+      <button class="danger-button mono" id="chaos-button" type="button">
+        DO NOT PRESS
+      </button>
+
+      <p class="control-note mono" id="control-note">everything operating within normal parameters</p>
+    </section>
+
+    <section id="made" class="made">
+      <div class="section-label reveal">
+        <span class="mono">01 / THINGS I MADE</span>
+        <span class="mono">CURRENT COUNT: 1</span>
       </div>
 
-      <article class="project reveal">
+      <article class="classlog-card reveal">
         <div class="project-copy">
-          <div>
-            <p class="project-kicker">WINDOWS · DESKTOP · 2026</p>
-            <div class="project-title">
-              <img src="/classlog/assets/icon.png" alt="" class="project-icon">
+          <div class="project-title-row">
+            <img src="/classlog/assets/icon.png" class="project-icon" alt="">
+            <div>
+              <p class="mono project-meta">WINDOWS · 2026</p>
               <h2>ClassLog</h2>
             </div>
-            <p class="project-description">
-              A classroom record tool for classes, attendance,
-              assessments and student activity.
-            </p>
           </div>
 
-          <div class="project-bottom">
-            <p class="project-note">
-              Started somewhere around<br>
-              “this spreadsheet is getting ridiculous.”
-            </p>
-            <p class="project-stack">TAURI · REACT · RUST</p>
-            <a class="project-link" href="/classlog/">
-              Open project <span aria-hidden="true">↗</span>
-            </a>
+          <p class="project-blurb optional-copy">
+            A classroom record tool for classes, attendance,
+            assessments and student activity.
+          </p>
+
+          <blockquote class="project-origin optional-copy">
+            “I’ll just use a spreadsheet.”
+            <span>— a sentence that did not age well</span>
+          </blockquote>
+
+          <div class="project-footer">
+            <span class="mono">TAURI · REACT · RUST</span>
+            <a href="/classlog/">Open project ↗</a>
           </div>
         </div>
 
-        <a class="project-visual" href="/classlog/" aria-label="Open ClassLog project">
-          <div class="visual-topline">
+        <a class="project-screen" href="/classlog/" aria-label="Open ClassLog project">
+          <div class="screen-label mono">
             <span>CLASSLOG / ATTENDANCE</span>
-            <span>LIVE BUILD</span>
+            <span>ACTUAL SOFTWARE, PROMISE</span>
           </div>
 
-          <div class="screen-wrap">
+          <div class="screen-frame">
             <img src="/classlog/assets/screens/attendance.png" alt="ClassLog attendance screen">
           </div>
 
-          <div class="corner corner-tl" aria-hidden="true"></div>
-          <div class="corner corner-tr" aria-hidden="true"></div>
-          <div class="corner corner-bl" aria-hidden="true"></div>
-          <div class="corner corner-br" aria-hidden="true"></div>
-
-          <span class="visual-joke">less clicking, more teaching →</span>
+          <span class="screen-note mono">less clicking, more teaching →</span>
         </a>
       </article>
     </section>
 
-    <section id="about" class="about">
-      <div class="section-head reveal">
-        <span>ABOUT THE PERSON MAKING THIS STUFF</span>
-        <span>002</span>
+    <section id="me" class="me">
+      <div class="section-label reveal">
+        <span class="mono">02 / THE PERSON RESPONSIBLE</span>
+        <span class="mono">PROBABLY OVERTHINKING SOMETHING</span>
       </div>
 
-      <div class="about-layout">
-        <p class="about-lead reveal">
-          Curious about almost everything.<br>
-          Patient with details.<br>
-          Impatient with repetitive work.
-        </p>
+      <div class="me-layout">
+        <div class="me-copy reveal">
+          <h2>
+            Curious about too many things.<br>
+            Lazy in a very productive way.
+          </h2>
+          <p class="optional-copy">
+            I like figuring out how things work, making repetitive work disappear,
+            and spending unreasonable amounts of time on details that absolutely
+            could have been left alone.
+          </p>
+        </div>
 
-        <div class="about-side reveal">
-          <p>
-            I like useful tools, clean interfaces, unnecessary optimization,
-            and tiny details that most people will never notice.
-          </p>
-          <p class="small">
-            Which is probably why this page has taken more versions than it should have.
-          </p>
+        <div class="traits reveal" aria-label="Traits">
+          <div class="trait">
+            <span class="mono">CURIOSITY</span>
+            <strong>high</strong>
+            <i style="--level:92%"></i>
+          </div>
+          <div class="trait">
+            <span class="mono">EFFICIENCY BRAIN</span>
+            <strong>dangerously high</strong>
+            <i style="--level:97%"></i>
+          </div>
+          <div class="trait">
+            <span class="mono">PATIENCE FOR REPETITION</span>
+            <strong>not found</strong>
+            <i style="--level:8%"></i>
+          </div>
+          <div class="trait">
+            <span class="mono">RABBIT HOLES</span>
+            <strong>frequent</strong>
+            <i style="--level:84%"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="likes reveal">
+        <div class="like-card">
+          <span class="mono">GAME</span>
+          <strong>Overwatch</strong>
+          <small>because apparently calm hobbies were available</small>
+        </div>
+        <div class="like-card">
+          <span class="mono">SOUND</span>
+          <strong>Rock bands</strong>
+          <small>more guitars is usually the answer</small>
+        </div>
+        <div class="like-card">
+          <span class="mono">CAR</span>
+          <strong>Aston Martin</strong>
+          <small>current ownership status: emotionally</small>
         </div>
       </div>
     </section>
 
-    <section class="contact">
-      <div class="section-head reveal">
-        <span>CONTACT</span>
-        <span>003</span>
+    <section class="contact reveal">
+      <div>
+        <p class="mono">03 / CONTACT</p>
+        <h2>Email still works.</h2>
+        <p class="optional-copy">A surprisingly durable technology.</p>
       </div>
-
-      <div class="contact-layout reveal">
-        <p>
-          If you have something interesting to say,<br>
-          email is still undefeated.
-        </p>
-        <a href="mailto:kyjdevelop@gmail.com">
-          kyjdevelop@gmail.com <span aria-hidden="true">↗</span>
-        </a>
-      </div>
+      <a href="mailto:kyjdevelop@gmail.com">kyjdevelop@gmail.com ↗</a>
     </section>
   </main>
 
   <footer>
     <span>© 2026 K-youngjae</span>
-    <span class="footer-center">Built with fewer meetings than most websites.</span>
+    <span class="footer-joke">No cookies. I ate them.</span>
     <a href="/classlog/privacy.html">Privacy</a>
   </footer>
+
+  <dialog id="garage-dialog">
+    <form method="dialog">
+      <div class="dialog-head">
+        <span class="mono">DREAM GARAGE / INVENTORY</span>
+        <button aria-label="Close">×</button>
+      </div>
+      <div class="garage-count">0</div>
+      <p>cars currently owned</p>
+      <div class="garage-rule"></div>
+      <p class="garage-wish">Wanted: Aston Martin</p>
+      <p class="garage-small mono">STATUS: FINANCIALLY INCONVENIENT</p>
+    </form>
+  </dialog>
 
   <script src="/script.js"></script>
 </body>
