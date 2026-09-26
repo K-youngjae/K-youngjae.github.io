@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>K-youngjae — I make things</title>
-  <meta name="description" content="A small corner of the internet for things K-youngjae makes, likes, and overthinks.">
+  <meta name="description" content="Things made by K-youngjae.">
   <meta name="theme-color" content="#f2f0e9">
   <meta property="og:type" content="website">
   <meta property="og:title" content="K-youngjae — I make things">
-  <meta property="og:description" content="Things I make, like, and probably overthink.">
+  <meta property="og:description" content="Software, tools, and other projects.">
   <meta property="og:image" content="https://k-youngjae.github.io/classlog/assets/screens/attendance.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,6 @@
       <span class="brand-dot" aria-hidden="true"></span>
       <span>K-youngjae</span>
     </a>
-
     <nav aria-label="Primary navigation">
       <a href="#made">Made</a>
       <a href="#me">Me</a>
@@ -34,15 +33,8 @@
     <section class="hero">
       <div class="hero-main reveal">
         <p class="mono eyebrow">HELLO, INTERNET.</p>
-        <h1>
-          I make things.<br>
-          Mostly because
-          <span class="scribble">annoying things</span>
-          are hard to ignore.
-        </h1>
-        <p class="hero-sub">
-          Not a studio. Not a startup. Just one person with too many tabs open.
-        </p>
+        <h1>I make things.</h1>
+        <p class="hero-sub">Software, tools, and other projects.</p>
       </div>
 
       <aside class="dashboard reveal" aria-label="Current status">
@@ -51,24 +43,11 @@
           <span class="mono">CURRENT STATUS</span>
           <span class="mono time-readout" id="local-time">--:--</span>
         </div>
-
         <dl>
-          <div>
-            <dt>BUILDING</dt>
-            <dd>ClassLog</dd>
-          </div>
-          <div>
-            <dt>PLAYING</dt>
-            <dd>Overwatch</dd>
-          </div>
-          <div>
-            <dt>LISTENING</dt>
-            <dd>Something with guitars</dd>
-          </div>
-          <div>
-            <dt>DREAM GARAGE</dt>
-            <dd><button class="text-button" id="garage-button" type="button">Open inventory →</button></dd>
-          </div>
+          <div><dt>BUILDING</dt><dd>ClassLog</dd></div>
+          <div><dt>PLAYING</dt><dd>Overwatch</dd></div>
+          <div><dt>LISTENING</dt><dd>Something with guitars</dd></div>
+          <div><dt>DREAM GARAGE</dt><dd><button class="text-button" id="garage-button" type="button">Open inventory →</button></dd></div>
         </dl>
       </aside>
     </section>
@@ -78,11 +57,7 @@
         <span class="mono">EFFICIENCY MODE</span>
         <span class="switch" aria-hidden="true"><i></i></span>
       </button>
-
-      <button class="danger-button mono" id="chaos-button" type="button">
-        DO NOT PRESS
-      </button>
-
+      <button class="danger-button mono" id="chaos-button" type="button">DO NOT PRESS</button>
       <p class="control-note mono" id="control-note">everything operating within normal parameters</p>
     </section>
 
@@ -94,42 +69,51 @@
 
       <article class="classlog-card reveal">
         <div class="project-copy">
-          <div class="project-title-row">
-            <img src="/classlog/assets/icon.png" class="project-icon" alt="">
-            <div>
-              <p class="mono project-meta">WINDOWS · 2026</p>
-              <h2>ClassLog</h2>
+          <div>
+            <div class="project-title-row">
+              <img src="/classlog/assets/icon.png" class="project-icon" alt="">
+              <div>
+                <p class="mono project-meta">WINDOWS · 2026</p>
+                <h2>ClassLog</h2>
+              </div>
             </div>
+
+            <p class="project-blurb optional-copy">
+              A classroom record tool for classes, attendance,
+              assessments and student activity.
+            </p>
           </div>
 
-          <p class="project-blurb optional-copy">
-            A classroom record tool for classes, attendance,
-            assessments and student activity.
-          </p>
-
-          <blockquote class="project-origin optional-copy">
-            “I’ll just use a spreadsheet.”
-            <span>— a sentence that did not age well</span>
-          </blockquote>
-
-          <div class="project-footer">
-            <span class="mono">TAURI · REACT · RUST</span>
-            <a href="/classlog/">Open project ↗</a>
+          <div class="project-bottom">
+            <blockquote class="project-origin optional-copy">
+              “I’ll just use a spreadsheet.”
+              <span>— a sentence that did not age well</span>
+            </blockquote>
+            <div class="project-footer">
+              <span class="mono">TAURI · REACT · RUST</span>
+              <a href="/classlog/">Open project ↗</a>
+            </div>
           </div>
         </div>
 
-        <a class="project-screen" href="/classlog/" aria-label="Open ClassLog project">
-          <div class="screen-label mono">
-            <span>CLASSLOG / ATTENDANCE</span>
-            <span>ACTUAL SOFTWARE, PROMISE</span>
+        <div class="project-screen">
+          <div class="screen-toolbar">
+            <span class="mono">CLASSLOG / ATTENDANCE</span>
+            <div class="view-toggle" role="group" aria-label="Screenshot view">
+              <button type="button" class="view-button is-active" data-view="detail">DETAIL</button>
+              <button type="button" class="view-button" data-view="full">FULL</button>
+            </div>
           </div>
 
-          <div class="screen-frame">
+          <a class="screen-frame is-detail" id="classlog-screen" href="/classlog/" aria-label="Open ClassLog project">
             <img src="/classlog/assets/screens/attendance.png" alt="ClassLog attendance screen">
-          </div>
+          </a>
 
-          <span class="screen-note mono">less clicking, more teaching →</span>
-        </a>
+          <div class="screen-bottom">
+            <span class="mono">same box, more useful pixels</span>
+            <a href="/classlog/">Open ClassLog ↗</a>
+          </div>
+        </div>
       </article>
     </section>
 
@@ -153,26 +137,10 @@
         </div>
 
         <div class="traits reveal" aria-label="Traits">
-          <div class="trait">
-            <span class="mono">CURIOSITY</span>
-            <strong>high</strong>
-            <i style="--level:92%"></i>
-          </div>
-          <div class="trait">
-            <span class="mono">EFFICIENCY BRAIN</span>
-            <strong>dangerously high</strong>
-            <i style="--level:97%"></i>
-          </div>
-          <div class="trait">
-            <span class="mono">PATIENCE FOR REPETITION</span>
-            <strong>not found</strong>
-            <i style="--level:8%"></i>
-          </div>
-          <div class="trait">
-            <span class="mono">RABBIT HOLES</span>
-            <strong>frequent</strong>
-            <i style="--level:84%"></i>
-          </div>
+          <div class="trait"><span class="mono">CURIOSITY</span><strong>high</strong><i style="--level:92%"></i></div>
+          <div class="trait"><span class="mono">EFFICIENCY BRAIN</span><strong>dangerously high</strong><i style="--level:97%"></i></div>
+          <div class="trait"><span class="mono">PATIENCE FOR REPETITION</span><strong>not found</strong><i style="--level:8%"></i></div>
+          <div class="trait"><span class="mono">RABBIT HOLES</span><strong>frequent</strong><i style="--level:84%"></i></div>
         </div>
       </div>
 
