@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>K-youngjae — Independent Software</title>
   <meta name="description" content="Independent software projects by K-youngjae.">
-  <meta name="theme-color" content="#f4f4f0">
+  <meta name="theme-color" content="#f5f5f1">
   <meta property="og:type" content="website">
   <meta property="og:title" content="K-youngjae — Independent Software">
   <meta property="og:description" content="Independent software projects by K-youngjae.">
@@ -17,138 +17,92 @@
 </head>
 
 <body>
-  <div class="noise" aria-hidden="true"></div>
-
   <header class="topbar">
     <a class="wordmark" href="/" aria-label="K-youngjae home">K‑YOUNGJAE</a>
     <nav class="topnav" aria-label="Primary">
-      <a href="#work">Selected work</a>
+      <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="mailto:kyjdevelop@gmail.com">Email ↗</a>
     </nav>
   </header>
 
   <main>
-    <section class="intro" aria-labelledby="intro-title">
-      <div class="intro-kicker reveal">
-        <span class="dot"></span>
-        <span>Independent software</span>
-      </div>
+    <section class="intro">
+      <p class="eyebrow reveal">Independent software</p>
 
-      <h1 id="intro-title" class="intro-title reveal">
+      <h1 class="intro-title reveal">
         Small software.<br>
-        <span class="muted">Carefully made.</span>
+        <span>Carefully made.</span>
       </h1>
 
       <div class="intro-bottom reveal">
-        <p>
-          Personal software projects, designed and built independently.
-        </p>
-        <a class="down-link" href="#work">
-          Selected work
-          <span aria-hidden="true">↓</span>
-        </a>
+        <p>Personal software projects, designed and built independently.</p>
+        <a href="#work">Selected work ↓</a>
       </div>
     </section>
 
     <section id="work" class="work-section">
       <div class="section-head reveal">
-        <p>Selected work</p>
-        <p>01 / 2026</p>
+        <span>Selected work</span>
+        <span>2026</span>
       </div>
 
-      <article class="project-stage reveal" data-tilt>
-        <div class="stage-ambient ambient-a" aria-hidden="true"></div>
-        <div class="stage-ambient ambient-b" aria-hidden="true"></div>
-        <div class="stage-grid" aria-hidden="true"></div>
-
+      <article class="project-stage reveal">
         <div class="project-copy">
-          <div class="project-identity">
-            <img
-              class="project-icon"
-              src="https://k-youngjae.github.io/classlog/assets/icon.png"
-              alt=""
-            >
+          <div class="project-id">
+            <img src="/classlog/assets/icon.png" alt="">
             <span>Windows desktop app</span>
           </div>
 
-          <div>
+          <div class="project-main-copy">
             <p class="project-label">CLASSLOG</p>
             <h2>One place for<br>the whole class.</h2>
+            <p class="project-summary">
+              Classes, attendance, assessments and student activity records —
+              kept in one continuous workflow.
+            </p>
+            <a class="project-link" href="/classlog/">
+              Explore ClassLog <span aria-hidden="true">↗</span>
+            </a>
           </div>
-
-          <p class="project-summary">
-            Classes, attendance, assessments and student activity records —
-            kept in one continuous workflow.
-          </p>
-
-          <a class="project-link" href="/classlog/">
-            Explore ClassLog
-            <span aria-hidden="true">↗</span>
-          </a>
         </div>
 
         <a class="product-shot" href="/classlog/" aria-label="Open ClassLog">
-          <div class="shot-chrome">
-            <div class="shot-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="shot-top">
             <span>ClassLog</span>
             <span>Attendance</span>
           </div>
-          <div class="shot-viewport">
-            <img
-              src="https://k-youngjae.github.io/classlog/assets/screens/attendance.png"
-              alt="ClassLog attendance screen"
-            >
-          </div>
+          <img
+            src="/classlog/assets/screens/attendance.png"
+            alt="ClassLog attendance screen"
+          >
         </a>
-
-        <div class="floating-tag tag-one" aria-hidden="true">ATTENDANCE</div>
-        <div class="floating-tag tag-two" aria-hidden="true">ASSESSMENT</div>
       </article>
 
       <div class="project-meta reveal">
-        <div>
-          <span>Role</span>
-          <strong>Design & development</strong>
-        </div>
-        <div>
-          <span>Platform</span>
-          <strong>Windows</strong>
-        </div>
-        <div>
-          <span>Stack</span>
-          <strong>Tauri · React · Rust</strong>
-        </div>
-        <div>
-          <span>Status</span>
-          <strong>In development</strong>
-        </div>
+        <div><span>Role</span><strong>Design & development</strong></div>
+        <div><span>Platform</span><strong>Windows</strong></div>
+        <div><span>Stack</span><strong>Tauri · React · Rust</strong></div>
+        <div><span>Status</span><strong>In development</strong></div>
       </div>
     </section>
 
     <section id="about" class="about-section">
-      <div class="about-index reveal">ABOUT</div>
+      <p class="section-label reveal">About</p>
 
       <div class="about-copy reveal">
-        <p class="about-lead">
-          I design and build focused desktop software.
-        </p>
-        <p class="about-body">
+        <h2>I design and build focused desktop software.</h2>
+        <p>
           This site is a home for independent projects as they take shape.
           ClassLog is the first one here.
         </p>
       </div>
-
-      <div class="about-mark reveal" aria-hidden="true">
-        <span>K</span>
-      </div>
     </section>
 
     <section class="contact-section">
-      <p class="contact-eyebrow reveal">GET IN TOUCH</p>
+      <p class="section-label reveal">Get in touch</p>
       <a class="contact-link reveal" href="mailto:kyjdevelop@gmail.com">
-        kyjdevelop@gmail.com
-        <span aria-hidden="true">↗</span>
+        kyjdevelop@gmail.com <span aria-hidden="true">↗</span>
       </a>
     </section>
   </main>
