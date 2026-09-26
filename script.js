@@ -1,3 +1,23 @@
+
+// V15.1: never restore transient animation state after refresh/history restoration.
+function resetTransientActors() {
+  [
+    ['#band-stage', 'active'],
+    ['#car-stage', 'active'],
+    ['#robot-stage', 'active'],
+    ['#robot-stage', 'bow'],
+    ['#match-overlay', 'active']
+  ].forEach(([selector, cls]) => document.querySelector(selector)?.classList.remove(cls));
+
+  document.querySelector('#band-stage')?.setAttribute('aria-hidden', 'true');
+  document.querySelector('#car-stage')?.setAttribute('aria-hidden', 'true');
+  document.querySelector('#robot-stage')?.setAttribute('aria-hidden', 'true');
+  document.querySelector('#match-overlay')?.setAttribute('aria-hidden', 'true');
+}
+
+resetTransientActors();
+window.addEventListener('pageshow', resetTransientActors);
+
 const reveals = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
@@ -173,6 +193,8 @@ function summonBand() {
     return;
   }
   bandBusy = true;
+  bandStage?.classList.remove('active');
+  void bandStage?.offsetWidth;
   bandStage?.classList.add('active');
   bandStage?.setAttribute('aria-hidden', 'false');
   setTimeout(() => showToast('this got louder than expected.'), 1400);
@@ -188,6 +210,8 @@ let carBusy = false;
 function driveCar() {
   if (carBusy) return;
   carBusy = true;
+  carStage?.classList.remove('active');
+  void carStage?.offsetWidth;
   carStage?.classList.add('active');
   carStage?.setAttribute('aria-hidden', 'false');
   setTimeout(() => {

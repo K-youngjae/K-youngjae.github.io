@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=15.1">
 </head>
 <body>
   <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
@@ -259,12 +259,95 @@
   </div>
 
   <div class="band-stage" id="band-stage" aria-hidden="true">
-    <div class="band-light light-a"></div>
-    <div class="band-light light-b"></div>
-    <div class="musician guitarist g1"><div class="head"></div><div class="body"></div><div class="leg l"></div><div class="leg r"></div><div class="guitar"><i></i></div></div>
-    <div class="musician drummer"><div class="head"></div><div class="body"></div><div class="drum"></div><div class="stick s1"></div><div class="stick s2"></div></div>
-    <div class="musician guitarist g2"><div class="head"></div><div class="body"></div><div class="leg l"></div><div class="leg r"></div><div class="guitar"><i></i></div></div>
-    <div class="band-label mono">LIVE, FOR NO PARTICULAR REASON</div>
+    <div class="band-shell">
+      <div class="band-label mono">LIVE, FOR NO PARTICULAR REASON</div>
+      <div class="stage-light stage-light-left"></div>
+      <div class="stage-light stage-light-right"></div>
+
+      <svg class="band-svg" viewBox="0 0 720 240" role="img" aria-label="A tiny three-piece band">
+        <defs>
+          <linearGradient id="stageGlow" x1="0" x2="1">
+            <stop offset="0" stop-color="#756cff" stop-opacity=".18"/>
+            <stop offset=".55" stop-color="#315b49" stop-opacity=".08"/>
+            <stop offset="1" stop-color="#ddf45b" stop-opacity=".12"/>
+          </linearGradient>
+          <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#000" flood-opacity=".38"/>
+          </filter>
+        </defs>
+
+        <rect x="0" y="0" width="720" height="240" fill="url(#stageGlow)"/>
+        <ellipse cx="360" cy="216" rx="286" ry="15" fill="#080b0a" opacity=".68"/>
+
+        <!-- LEFT GUITARIST -->
+        <g class="performer performer-left" filter="url(#softShadow)">
+          <circle cx="176" cy="67" r="19" fill="#d7dad6"/>
+          <path d="M159 65c3-22 35-28 40-4-9-8-27-8-40 4Z" fill="#111513"/>
+          <path d="M160 87 Q176 78 192 87 L203 145 Q176 158 149 145 Z" fill="#5d6560"/>
+          <path d="M159 144 L151 205" stroke="#151917" stroke-width="10" stroke-linecap="round"/>
+          <path d="M190 144 L199 205" stroke="#151917" stroke-width="10" stroke-linecap="round"/>
+          <path d="M158 103 L122 130" stroke="#d7dad6" stroke-width="8" stroke-linecap="round"/>
+          <g class="guitar-left">
+            <path d="M111 126 C92 117 77 130 82 145 C88 162 112 161 127 151 C139 143 144 126 131 119 C123 115 116 119 111 126 Z"
+                  fill="#756cff" stroke="#0b0e0d" stroke-width="4"/>
+            <rect x="123" y="130" width="86" height="10" rx="4" fill="#b9bcb8" stroke="#0b0e0d" stroke-width="4" transform="rotate(-13 123 130)"/>
+            <circle cx="112" cy="141" r="6" fill="#101412"/>
+          </g>
+          <path class="strum-arm" d="M190 104 L151 135" stroke="#d7dad6" stroke-width="8" stroke-linecap="round"/>
+        </g>
+
+        <!-- DRUM KIT -->
+        <g class="drum-kit" filter="url(#softShadow)">
+          <ellipse cx="360" cy="180" rx="48" ry="38" fill="#252b28" stroke="#0b0e0d" stroke-width="5"/>
+          <ellipse cx="360" cy="180" rx="32" ry="24" fill="#4b554f"/>
+          <circle cx="306" cy="162" r="25" fill="#303733" stroke="#0b0e0d" stroke-width="5"/>
+          <circle cx="414" cy="162" r="25" fill="#303733" stroke="#0b0e0d" stroke-width="5"/>
+          <path d="M295 136 L280 102" stroke="#9da39e" stroke-width="4"/>
+          <path d="M425 136 L442 101" stroke="#9da39e" stroke-width="4"/>
+          <ellipse cx="275" cy="96" rx="31" ry="7" fill="#b9bd8a" stroke="#0b0e0d" stroke-width="4"/>
+          <ellipse cx="447" cy="95" rx="31" ry="7" fill="#b9bd8a" stroke="#0b0e0d" stroke-width="4"/>
+        </g>
+
+        <!-- DRUMMER -->
+        <g class="performer drummer-person" filter="url(#softShadow)">
+          <circle cx="360" cy="67" r="19" fill="#d7dad6"/>
+          <path d="M343 64c7-23 37-19 40 2-12-7-27-8-40-2Z" fill="#111513"/>
+          <path d="M344 89 Q360 79 376 89 L381 135 Q360 145 339 135 Z" fill="#69726c"/>
+          <path class="drum-arm drum-arm-left" d="M347 100 L316 130" stroke="#d7dad6" stroke-width="8" stroke-linecap="round"/>
+          <path class="drum-arm drum-arm-right" d="M373 100 L405 126" stroke="#d7dad6" stroke-width="8" stroke-linecap="round"/>
+          <path class="drum-stick drum-stick-left" d="M316 130 L292 103" stroke="#ded4a9" stroke-width="4" stroke-linecap="round"/>
+          <path class="drum-stick drum-stick-right" d="M405 126 L432 102" stroke="#ded4a9" stroke-width="4" stroke-linecap="round"/>
+        </g>
+
+        <!-- RIGHT BASSIST -->
+        <g class="performer performer-right" filter="url(#softShadow)">
+          <circle cx="546" cy="67" r="19" fill="#d7dad6"/>
+          <path d="M528 63c5-22 35-22 38 2-10-6-25-8-38-2Z" fill="#111513"/>
+          <path d="M529 87 Q546 79 562 88 L574 146 Q547 158 519 145 Z" fill="#626a65"/>
+          <path d="M531 145 L522 205" stroke="#151917" stroke-width="10" stroke-linecap="round"/>
+          <path d="M560 145 L571 205" stroke="#151917" stroke-width="10" stroke-linecap="round"/>
+          <path d="M533 104 L503 130" stroke="#d7dad6" stroke-width="8" stroke-linecap="round"/>
+          <g class="guitar-right">
+            <path d="M492 126 C472 117 459 131 465 147 C471 161 493 161 509 151 C523 142 525 126 513 119 C504 114 497 119 492 126 Z"
+                  fill="#4b8067" stroke="#0b0e0d" stroke-width="4"/>
+            <rect x="504" y="131" width="91" height="10" rx="4" fill="#b9bcb8" stroke="#0b0e0d" stroke-width="4" transform="rotate(12 504 131)"/>
+            <circle cx="494" cy="141" r="6" fill="#101412"/>
+          </g>
+          <path class="strum-arm" d="M560 104 L520 136" stroke="#d7dad6" stroke-width="8" stroke-linecap="round"/>
+        </g>
+
+        <g class="eq-bars" opacity=".75">
+          <rect x="25" y="197" width="6" height="12" rx="3"/>
+          <rect x="36" y="190" width="6" height="19" rx="3"/>
+          <rect x="47" y="183" width="6" height="26" rx="3"/>
+          <rect x="58" y="193" width="6" height="16" rx="3"/>
+          <rect x="657" y="191" width="6" height="18" rx="3"/>
+          <rect x="668" y="180" width="6" height="29" rx="3"/>
+          <rect x="679" y="187" width="6" height="22" rx="3"/>
+          <rect x="690" y="196" width="6" height="13" rx="3"/>
+        </g>
+      </svg>
+    </div>
   </div>
 
   <div class="car-stage" id="car-stage" aria-hidden="true">
@@ -340,6 +423,6 @@
     </form>
   </dialog>
 
-  <script src="/script.js"></script>
+  <script src="/script.js?v=15.1"></script>
 </body>
 </html>
