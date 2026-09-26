@@ -17,12 +17,14 @@
 </head>
 <body>
   <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <header class="topbar">
     <a class="brand" href="/" aria-label="Youngjae Kim home">
       <span class="brand-mark" aria-hidden="true"></span>
       <span>YK</span>
     </a>
+
     <nav aria-label="Primary navigation">
       <a href="#me">Me</a>
       <a href="#made">Made</a>
@@ -37,7 +39,7 @@
         <p class="mono eyebrow">SEOUL, KOREA · <span id="seoul-time">--:--</span></p>
         <h1>Youngjae Kim</h1>
         <p class="hero-line">I make things.</p>
-        <p class="hero-sub">Software, tools, and other things I got curious enough to build.</p>
+        <p class="hero-sub">Software, tools, and whatever else gets interesting enough.</p>
 
         <div class="hero-actions">
           <a href="#made">See what I made ↓</a>
@@ -51,19 +53,25 @@
           <span class="mono">LOCAL CONDITIONS</span>
           <button class="mono korean-toggle" id="korean-toggle" type="button">한/EN</button>
         </div>
+
         <dl>
           <div><dt>USUAL HABITAT</dt><dd data-en="home" data-ko="집">집</dd></div>
           <div><dt>OCCASIONALLY OUTSIDE</dt><dd data-en="Yeonnam · Seongsu" data-ko="연남 · 성수">연남 · 성수</dd></div>
           <div><dt>AFTER DARK</dt><dd data-en="Han River > most things" data-ko="한강 > 웬만한 것들">한강 &gt; most things</dd></div>
           <div><dt>CAFFEINE DELIVERY</dt><dd data-en="Latte" data-ko="라떼">Latte</dd></div>
         </dl>
+
+        <div class="seoul-footer">
+          <span>Interested in Seoul?</span>
+          <button id="seoul-interest" type="button">possibly →</button>
+        </div>
       </aside>
     </section>
 
-    <section class="ticker reveal" aria-label="Random thought">
+    <section class="ticker reveal" aria-label="Current rabbit hole">
       <span class="mono">CURRENT RABBIT HOLE</span>
       <strong id="rabbit-hole">making this page less embarrassing</strong>
-      <button id="another-thought" type="button" class="ticker-button mono">ANOTHER ONE ↻</button>
+      <button id="rabbit-next" type="button" class="ticker-button mono">GO DEEPER ↘</button>
     </section>
 
     <section id="me" class="me">
@@ -76,39 +84,79 @@
         <div class="intro-copy reveal">
           <h2>Curious about too many things.<br>Lazy in a very productive way.</h2>
           <p>
-            Engineer by day. At other times: comparing things that probably did not need comparing,
-            chasing small details, and trying to make repetitive work disappear.
+            Engineer by day. At other times: comparing things that probably did not
+            need comparing, chasing small details, and trying to make repetitive work disappear.
           </p>
+
+          <button class="outside-button mono" id="outside-button" type="button">
+            GO OUTSIDE?
+          </button>
         </div>
 
         <div class="quirks reveal">
-          <div class="quirk"><span class="mono">IF IT ANNOYS ME TWICE</span><strong>I start thinking about automating it.</strong></div>
-          <div class="quirk"><span class="mono">SIMPLE QUESTION</span><strong>Frequently becomes a research project.</strong></div>
-          <div class="quirk"><span class="mono">CAN IGNORE</span><strong>Many things.</strong></div>
-          <div class="quirk"><span class="mono">CANNOT IGNORE</span><strong>A 2px alignment error.</strong></div>
+          <div class="quirk">
+            <span class="mono">IF IT ANNOYS ME TWICE</span>
+            <strong>I start thinking about automating it.</strong>
+          </div>
+
+          <div class="quirk">
+            <span class="mono">SIMPLE QUESTION</span>
+            <strong>Frequently becomes a research project.</strong>
+          </div>
+
+          <div class="quirk">
+            <span class="mono">CAN IGNORE</span>
+            <strong>Many things.</strong>
+          </div>
+
+          <button class="quirk quirk-button" id="alignment-fix" type="button">
+            <span class="mono">CANNOT IGNORE</span>
+            <strong class="misaligned">A 2px alignment error.</strong>
+          </button>
         </div>
       </div>
 
       <div class="personal-grid reveal">
-        <article data-bob>
+        <article class="personal-card overwatch-card">
           <span class="mono">PLAYING</span>
           <strong>Overwatch</strong>
-          <small>because peaceful hobbies were somehow not selected</small>
+          <small>queue?</small>
+          <button class="card-action" id="queue-button" type="button">find match →</button>
         </article>
-        <article data-bob>
+
+        <article class="personal-card speaker-card">
           <span class="mono">LISTENING</span>
           <strong>Muse / Oasis</strong>
-          <small>guitars remain an excellent technology</small>
+
+          <div class="speaker-ui" aria-label="Guitar level">
+            <div class="speaker-box" aria-hidden="true">
+              <i class="speaker-cone"></i>
+              <i class="speaker-cone small"></i>
+            </div>
+
+            <div class="volume-control">
+              <span class="mono">GUITAR LEVEL</span>
+              <button id="volume-knob" type="button" class="volume-knob" aria-label="Increase guitar level">
+                <i></i>
+              </button>
+              <strong id="volume-value">7</strong>
+              <span>/ 11</span>
+            </div>
+          </div>
         </article>
-        <article data-bob>
+
+        <article class="personal-card aston-card">
           <span class="mono">DREAM GARAGE</span>
-          <strong>Aston Martin DB</strong>
-          <small><button id="garage-button" type="button">check inventory →</button></small>
+          <strong>Aston Martin DB<span id="db-number">__</span></strong>
+          <small id="db-caption">wait, what number are we on now?</small>
+          <button class="card-action" id="db-button" type="button">check →</button>
         </article>
-        <article data-bob>
+
+        <article class="personal-card figure-card">
           <span class="mono">DESK INVENTORY</span>
           <strong>Figures + speakers</strong>
-          <small>the essentials, apparently</small>
+          <small id="figure-caption">they mostly mind their own business</small>
+          <button class="card-action" id="figure-button" type="button">say hi →</button>
         </article>
       </div>
     </section>
@@ -129,6 +177,7 @@
                 <h2>ClassLog</h2>
               </div>
             </div>
+
             <p class="project-blurb">
               A classroom record tool for classes, attendance, assessments,
               and student activity.
@@ -140,6 +189,7 @@
               “I’ll just use a spreadsheet.”
               <span>— a sentence that did not age well</span>
             </blockquote>
+
             <p class="mono stack">TAURI · REACT · RUST</p>
             <a href="/classlog/" class="project-link">Open project ↗</a>
           </div>
@@ -177,8 +227,16 @@
           <span class="mono">EFFICIENCY MODE</span>
           <span class="switch" aria-hidden="true"><i></i></span>
         </button>
-        <button id="home-button" class="utility-button" type="button"><span class="mono">HOME MODE</span><span aria-hidden="true">⌂</span></button>
-        <button id="chaos-button" class="utility-button danger" type="button"><span class="mono">DO NOT PRESS</span></button>
+
+        <button id="home-button" class="utility-button" type="button">
+          <span class="mono">HOME MODE</span>
+          <span aria-hidden="true">⌂</span>
+        </button>
+
+        <button id="chaos-button" class="utility-button danger" type="button">
+          <span class="mono">DO NOT PRESS</span>
+        </button>
+
         <p id="system-message" class="mono system-message">nothing suspicious happening</p>
       </div>
     </section>
@@ -189,6 +247,7 @@
         <h2>Email still works.</h2>
         <p class="optional-copy">A surprisingly durable technology.</p>
       </div>
+
       <a href="mailto:kyjdevelop@gmail.com">kyjdevelop@gmail.com ↗</a>
     </section>
   </main>
@@ -199,17 +258,50 @@
     <a href="/classlog/privacy.html">Privacy</a>
   </footer>
 
-  <dialog id="garage-dialog">
+  <div class="robot-stage" id="robot-stage" aria-hidden="true">
+    <div class="robot robot-left">
+      <div class="antenna"></div>
+      <div class="robot-head"><i></i><i></i></div>
+      <div class="robot-body"></div>
+      <div class="robot-arm left"></div>
+      <div class="robot-arm right"></div>
+      <div class="robot-leg left"></div>
+      <div class="robot-leg right"></div>
+    </div>
+
+    <div class="robot robot-right">
+      <div class="antenna"></div>
+      <div class="robot-head"><i></i><i></i></div>
+      <div class="robot-body"></div>
+      <div class="robot-arm left"></div>
+      <div class="robot-arm right"></div>
+      <div class="robot-leg left"></div>
+      <div class="robot-leg right"></div>
+    </div>
+  </div>
+
+  <div class="match-overlay" id="match-overlay" aria-hidden="true">
+    <div class="match-panel">
+      <span class="mono">MATCH FOUND</span>
+      <strong id="match-count">10</strong>
+      <small id="match-caption">accept?</small>
+    </div>
+  </div>
+
+  <dialog id="seoul-dialog" class="small-dialog">
     <form method="dialog">
       <div class="dialog-head">
-        <span class="mono">DREAM GARAGE / INVENTORY</span>
+        <span class="mono">SEOUL?</span>
         <button aria-label="Close">×</button>
       </div>
-      <div class="garage-count">0</div>
-      <p>cars currently owned</p>
-      <div class="garage-rule"></div>
-      <p class="garage-wish">Wanted: Aston Martin DB series</p>
-      <p class="garage-small mono">STATUS: EMOTIONALLY OWNED · FINANCIALLY PENDING</p>
+      <div class="dialog-body">
+        <h3>Actually interested?</h3>
+        <p>This escalated quickly.</p>
+        <div class="dialog-actions">
+          <button id="flight-button" type="button">yes, apparently</button>
+          <button value="cancel">not that interested</button>
+        </div>
+      </div>
     </form>
   </dialog>
 
@@ -219,13 +311,15 @@
         <span class="mono">TINY COMMAND CENTER</span>
         <button aria-label="Close">×</button>
       </div>
+
       <div class="command-list">
+        <button type="button" data-command="robots"><span class="mono">R</span><strong>Summon robots</strong><small>finally, a useful command</small></button>
         <button type="button" data-command="home"><span class="mono">H</span><strong>Home mode</strong><small>stay exactly where you are</small></button>
         <button type="button" data-command="efficiency"><span class="mono">E</span><strong>Efficiency mode</strong><small>remove unnecessary words</small></button>
-        <button type="button" data-command="garage"><span class="mono">G</span><strong>Dream garage</strong><small>financially irresponsible tab</small></button>
         <button type="button" data-command="chaos"><span class="mono">C</span><strong>Minor chaos</strong><small>bad idea, obviously</small></button>
       </div>
-      <p class="command-hint mono">TIP: H / E / G / C ALSO WORK WITHOUT OPENING THIS</p>
+
+      <p class="command-hint mono">TIP: R / H / E / C ALSO WORK WITHOUT OPENING THIS</p>
     </form>
   </dialog>
 
