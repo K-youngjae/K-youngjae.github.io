@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Youngjae Kim</title>
   <meta name="description" content="Youngjae Kim — things I make, like, and overthink.">
-  <meta name="theme-color" content="#f1efe8">
+  <meta name="theme-color" content="#141817">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Youngjae Kim">
   <meta property="og:description" content="Things I make, like, and overthink.">
@@ -51,13 +51,13 @@
         <div class="seoul-card-head">
           <span class="live-dot" aria-hidden="true"></span>
           <span class="mono">LOCAL CONDITIONS</span>
-          <button class="mono korean-toggle" id="korean-toggle" type="button">한/EN</button>
+          <button class="mono korean-toggle" id="korean-toggle" type="button">EN / KO</button>
         </div>
 
         <dl>
-          <div><dt>USUAL HABITAT</dt><dd data-en="home" data-ko="집">집</dd></div>
-          <div><dt>OCCASIONALLY OUTSIDE</dt><dd data-en="Yeonnam · Seongsu" data-ko="연남 · 성수">연남 · 성수</dd></div>
-          <div><dt>AFTER DARK</dt><dd data-en="Han River > most things" data-ko="한강 > 웬만한 것들">한강 &gt; most things</dd></div>
+          <div><dt>USUAL HABITAT</dt><dd data-en="Home" data-ko="집">Home</dd></div>
+          <div><dt>OCCASIONALLY OUTSIDE</dt><dd data-en="Yeonnam · Seongsu" data-ko="연남 · 성수">Yeonnam · Seongsu</dd></div>
+          <div><dt>AFTER DARK</dt><dd data-en="Han River > most things" data-ko="한강 > 웬만한 것들">Han River &gt; most things</dd></div>
           <div><dt>CAFFEINE DELIVERY</dt><dd data-en="Latte" data-ko="라떼">Latte</dd></div>
         </dl>
 
@@ -76,43 +76,35 @@
 
     <section id="me" class="me">
       <div class="section-head reveal">
-        <span class="mono">01 / ABOUT</span>
-        <span class="mono">ENGINEER · HUMAN · SEOUL</span>
+        <span class="mono">01 / A FEW THINGS ABOUT ME</span>
+        <span class="mono">ENGINEER · SEOUL</span>
       </div>
 
-      <div class="intro-grid">
-        <div class="intro-copy reveal">
-          <h2>Curious about too many things.<br>Lazy in a very productive way.</h2>
-          <p>
-            Engineer by day. At other times: comparing things that probably did not
-            need comparing, chasing small details, and trying to make repetitive work disappear.
-          </p>
-
-          <button class="outside-button mono" id="outside-button" type="button">
-            GO OUTSIDE?
-          </button>
-        </div>
-
-        <div class="quirks reveal">
-          <div class="quirk">
+      <div class="facts-layout">
+        <div class="fact-stack reveal">
+          <div class="fact-row">
             <span class="mono">IF IT ANNOYS ME TWICE</span>
             <strong>I start thinking about automating it.</strong>
           </div>
-
-          <div class="quirk">
+          <div class="fact-row">
             <span class="mono">SIMPLE QUESTION</span>
             <strong>Frequently becomes a research project.</strong>
           </div>
-
-          <div class="quirk">
-            <span class="mono">CAN IGNORE</span>
-            <strong>Many things.</strong>
+          <div class="fact-row">
+            <span class="mono">USUAL EVENING</span>
+            <strong>Home.</strong>
           </div>
-
-          <button class="quirk quirk-button" id="alignment-fix" type="button">
+          <button class="fact-row fact-button" id="alignment-fix" type="button">
             <span class="mono">CANNOT IGNORE</span>
             <strong class="misaligned">A 2px alignment error.</strong>
           </button>
+        </div>
+
+        <div class="tiny-panel reveal">
+          <span class="mono">TRY SOMETHING</span>
+          <button id="outside-button" type="button">Go outside?</button>
+          <button id="compare-button" type="button">Compare something</button>
+          <button id="desk-button" type="button">Open desk drawer</button>
         </div>
       </div>
 
@@ -124,25 +116,11 @@
           <button class="card-action" id="queue-button" type="button">find match →</button>
         </article>
 
-        <article class="personal-card speaker-card">
+        <article class="personal-card music-card">
           <span class="mono">LISTENING</span>
           <strong>Muse / Oasis</strong>
-
-          <div class="speaker-ui" aria-label="Guitar level">
-            <div class="speaker-box" aria-hidden="true">
-              <i class="speaker-cone"></i>
-              <i class="speaker-cone small"></i>
-            </div>
-
-            <div class="volume-control">
-              <span class="mono">GUITAR LEVEL</span>
-              <button id="volume-knob" type="button" class="volume-knob" aria-label="Increase guitar level">
-                <i></i>
-              </button>
-              <strong id="volume-value">7</strong>
-              <span>/ 11</span>
-            </div>
-          </div>
+          <small>seems quiet in here</small>
+          <button class="card-action" id="band-button" type="button">play something →</button>
         </article>
 
         <article class="personal-card aston-card">
@@ -280,11 +258,48 @@
     </div>
   </div>
 
+  <div class="band-stage" id="band-stage" aria-hidden="true">
+    <div class="band-light light-a"></div>
+    <div class="band-light light-b"></div>
+    <div class="musician guitarist g1"><div class="head"></div><div class="body"></div><div class="leg l"></div><div class="leg r"></div><div class="guitar"><i></i></div></div>
+    <div class="musician drummer"><div class="head"></div><div class="body"></div><div class="drum"></div><div class="stick s1"></div><div class="stick s2"></div></div>
+    <div class="musician guitarist g2"><div class="head"></div><div class="body"></div><div class="leg l"></div><div class="leg r"></div><div class="guitar"><i></i></div></div>
+    <div class="band-label mono">LIVE, FOR NO PARTICULAR REASON</div>
+  </div>
+
+  <div class="car-stage" id="car-stage" aria-hidden="true">
+    <div class="car"><div class="car-body"></div><div class="car-roof"></div><div class="wheel w1"></div><div class="wheel w2"></div><div class="headlight"></div></div>
+  </div>
+
   <div class="match-overlay" id="match-overlay" aria-hidden="true">
     <div class="match-panel">
       <span class="mono">MATCH FOUND</span>
       <strong id="match-count">10</strong>
       <small id="match-caption">accept?</small>
+    </div>
+  </div>
+
+  <dialog id="compare-dialog" class="compare-dialog">
+    <form method="dialog">
+      <div class="dialog-head"><span class="mono">UNNECESSARY COMPARISON</span><button aria-label="Close">×</button></div>
+      <div class="compare-table">
+        <div></div><strong>Stay home</strong><strong>Go outside</strong>
+        <span>effort</span><b>low</b><b>concerning</b>
+        <span>latte access</span><b>excellent</b><b>variable</b>
+        <span>weather risk</span><b>none</b><b>exists</b>
+        <span>pants required</span><b>debatable</b><b>yes</b>
+      </div>
+      <p class="compare-verdict mono">CONCLUSION: DATA APPEARS BIASED</p>
+    </form>
+  </dialog>
+
+  <div class="desk-drawer" id="desk-drawer" aria-hidden="true">
+    <div class="drawer-head"><span class="mono">DESK DRAWER</span><button id="drawer-close" type="button">×</button></div>
+    <div class="drawer-grid">
+      <button type="button" data-desk="figure">FIGURE</button>
+      <button type="button" data-desk="speaker">SPEAKER</button>
+      <button type="button" data-desk="latte">LATTE</button>
+      <button type="button" data-desk="tabs">14 OPEN TABS</button>
     </div>
   </div>
 
@@ -314,12 +329,14 @@
 
       <div class="command-list">
         <button type="button" data-command="robots"><span class="mono">R</span><strong>Summon robots</strong><small>finally, a useful command</small></button>
+        <button type="button" data-command="band"><span class="mono">B</span><strong>Summon band</strong><small>volume: irresponsible</small></button>
+        <button type="button" data-command="car"><span class="mono">A</span><strong>Inspect garage</strong><small>ownership: emotional</small></button>
         <button type="button" data-command="home"><span class="mono">H</span><strong>Home mode</strong><small>stay exactly where you are</small></button>
         <button type="button" data-command="efficiency"><span class="mono">E</span><strong>Efficiency mode</strong><small>remove unnecessary words</small></button>
         <button type="button" data-command="chaos"><span class="mono">C</span><strong>Minor chaos</strong><small>bad idea, obviously</small></button>
       </div>
 
-      <p class="command-hint mono">TIP: R / H / E / C ALSO WORK WITHOUT OPENING THIS</p>
+      <p class="command-hint mono">TIP: R / B / A / H / E / C ALSO WORK WITHOUT OPENING THIS</p>
     </form>
   </dialog>
 

@@ -24,16 +24,22 @@ const seoulInterest = $('#seoul-interest');
 const seoulDialog = $('#seoul-dialog');
 const flightButton = $('#flight-button');
 const outsideButton = $('#outside-button');
+const compareButton = $('#compare-button');
+const compareDialog = $('#compare-dialog');
+const deskButton = $('#desk-button');
+const deskDrawer = $('#desk-drawer');
+const drawerClose = $('#drawer-close');
 const alignmentFix = $('#alignment-fix');
 const queueButton = $('#queue-button');
 const matchOverlay = $('#match-overlay');
 const matchCount = $('#match-count');
 const matchCaption = $('#match-caption');
-const volumeKnob = $('#volume-knob');
-const volumeValue = $('#volume-value');
+const bandButton = $('#band-button');
+const bandStage = $('#band-stage');
 const dbButton = $('#db-button');
 const dbNumber = $('#db-number');
 const dbCaption = $('#db-caption');
+const carStage = $('#car-stage');
 const figureButton = $('#figure-button');
 const figureCaption = $('#figure-caption');
 const robotStage = $('#robot-stage');
@@ -99,7 +105,33 @@ flightButton?.addEventListener('click', () => {
 });
 
 outsideButton?.addEventListener('click', () => {
+  const dx = Math.random() > .5 ? 52 : -52;
+  outsideButton.animate(
+    [{ transform: 'translateX(0)' }, { transform: `translateX(${dx}px)` }, { transform: 'translateX(0)' }],
+    { duration: 420, easing: 'cubic-bezier(.2,.8,.2,1)' }
+  );
   showToast('unsupported operation: leaving home');
+});
+
+compareButton?.addEventListener('click', () => compareDialog?.showModal());
+
+deskButton?.addEventListener('click', () => {
+  deskDrawer?.classList.add('open');
+  deskDrawer?.setAttribute('aria-hidden', 'false');
+});
+drawerClose?.addEventListener('click', () => {
+  deskDrawer?.classList.remove('open');
+  deskDrawer?.setAttribute('aria-hidden', 'true');
+});
+
+$$('[data-desk]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const item = button.dataset.desk;
+    if (item === 'figure') summonRobots();
+    if (item === 'speaker') summonBand();
+    if (item === 'latte') showToast('latte. no further notes.');
+    if (item === 'tabs') showToast('14 was an optimistic estimate.');
+  });
 });
 
 alignmentFix?.addEventListener('click', () => {
@@ -134,17 +166,36 @@ queueButton?.addEventListener('click', () => {
   }, 420);
 });
 
-let volume = 7;
-volumeKnob?.style.setProperty('--knob', '-20deg');
-volumeKnob?.addEventListener('click', () => {
-  volume = volume >= 11 ? 0 : volume + 1;
-  volumeValue.textContent = String(volume);
-  const deg = -130 + (volume / 11) * 260;
-  volumeKnob.style.setProperty('--knob', `${deg}deg`);
+let bandBusy = false;
+function summonBand() {
+  if (bandBusy) {
+    showToast('encore denied.');
+    return;
+  }
+  bandBusy = true;
+  bandStage?.classList.add('active');
+  bandStage?.setAttribute('aria-hidden', 'false');
+  setTimeout(() => showToast('this got louder than expected.'), 1400);
+  setTimeout(() => {
+    bandStage?.classList.remove('active');
+    bandStage?.setAttribute('aria-hidden', 'true');
+    bandBusy = false;
+  }, 5800);
+}
+bandButton?.addEventListener('click', summonBand);
 
-  if (volume === 11) showToast('correct.');
-  if (volume === 0) showToast('tragic.');
-});
+let carBusy = false;
+function driveCar() {
+  if (carBusy) return;
+  carBusy = true;
+  carStage?.classList.add('active');
+  carStage?.setAttribute('aria-hidden', 'false');
+  setTimeout(() => {
+    carStage?.classList.remove('active');
+    carStage?.setAttribute('aria-hidden', 'true');
+    carBusy = false;
+  }, 3300);
+}
 
 let dbStep = 0;
 dbButton?.addEventListener('click', () => {
@@ -154,12 +205,14 @@ dbButton?.addEventListener('click', () => {
     dbNumber.textContent = '12';
     dbCaption.textContent = 'ah. twelve.';
     dbButton.textContent = 'and ownership? →';
+    driveCar();
   } else if (dbStep === 2) {
     dbCaption.textContent = 'owned: 0';
     dbButton.textContent = 'emotionally? →';
   } else {
     dbCaption.textContent = 'emotionally owned: 1';
     dbButton.textContent = 'close enough';
+    driveCar();
   }
 });
 
@@ -204,7 +257,7 @@ viewButtons.forEach((button) => {
 efficiencyButton?.addEventListener('click', () => {
   document.body.classList.toggle('efficiency');
   systemMessage.textContent = document.body.classList.contains('efficiency')
-    ? 'unnecessary words successfully removed'
+    ? '37% less website'
     : 'nothing suspicious happening';
 });
 
@@ -249,6 +302,8 @@ commandButton?.addEventListener('click', () => commandDialog?.showModal());
 
 function runCommand(command) {
   if (command === 'robots') summonRobots();
+  if (command === 'band') summonBand();
+  if (command === 'car') driveCar();
   if (command === 'home') homeButton?.click();
   if (command === 'efficiency') efficiencyButton?.click();
   if (command === 'chaos') chaosButton?.click();
@@ -273,6 +328,8 @@ document.addEventListener('keydown', (event) => {
   }
 
   if (key === 'r') runCommand('robots');
+  if (key === 'b') runCommand('band');
+  if (key === 'a') runCommand('car');
   if (key === 'h') runCommand('home');
   if (key === 'e') runCommand('efficiency');
   if (key === 'c') runCommand('chaos');
