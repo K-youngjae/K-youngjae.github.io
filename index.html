@@ -3,98 +3,161 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>K-youngjae Apps</title>
-  <meta name="description" content="Apps and tools I’m building.">
-  <meta name="theme-color" content="#ffffff">
+  <title>K-youngjae — Independent Software</title>
+  <meta name="description" content="Independent software projects by K-youngjae.">
+  <meta name="theme-color" content="#f4f4f0">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="K-youngjae Apps">
-  <meta property="og:description" content="Apps and tools I’m building.">
+  <meta property="og:title" content="K-youngjae — Independent Software">
+  <meta property="og:description" content="Independent software projects by K-youngjae.">
   <meta property="og:image" content="https://k-youngjae.github.io/classlog/assets/screens/attendance.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="/" aria-label="K-youngjae Apps home">
-        <span class="brand-mark" aria-hidden="true">K</span>
-        <span class="brand-copy">
-          <strong>K-youngjae</strong>
-          <span>Apps</span>
-        </span>
-      </a>
-      <a class="header-link" href="/classlog/">View ClassLog <span aria-hidden="true">↗</span></a>
-    </div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="wordmark" href="/" aria-label="K-youngjae home">K‑YOUNGJAE</a>
+    <nav class="topnav" aria-label="Primary">
+      <a href="#work">Selected work</a>
+      <a href="#about">About</a>
+      <a href="mailto:kyjdevelop@gmail.com">Email ↗</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero shell">
-      <p class="eyebrow">PERSONAL SOFTWARE PROJECTS</p>
-      <h1>Apps and tools<br>I’m building.</h1>
-      <p class="hero-copy">
-        A small collection of software projects I design and build.
-      </p>
-    </section>
-
-    <section class="featured shell" aria-labelledby="featured-title">
-      <div class="featured-meta">
-        <span>Featured project</span>
-        <span>Windows desktop</span>
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-kicker reveal">
+        <span class="dot"></span>
+        <span>Independent software</span>
       </div>
 
-      <article class="product-card">
-        <div class="product-copy">
-          <div class="app-title-row">
-            <img src="/classlog/assets/icon.png" alt="" class="app-icon">
-            <div>
-              <p class="app-label">ClassLog</p>
-              <h2 id="featured-title">ClassLog</h2>
-            </div>
+      <h1 id="intro-title" class="intro-title reveal">
+        Small software.<br>
+        <span class="muted">Carefully made.</span>
+      </h1>
+
+      <div class="intro-bottom reveal">
+        <p>
+          Personal software projects, designed and built independently.
+        </p>
+        <a class="down-link" href="#work">
+          Selected work
+          <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="work" class="work-section">
+      <div class="section-head reveal">
+        <p>Selected work</p>
+        <p>01 / 2026</p>
+      </div>
+
+      <article class="project-stage reveal" data-tilt>
+        <div class="stage-ambient ambient-a" aria-hidden="true"></div>
+        <div class="stage-ambient ambient-b" aria-hidden="true"></div>
+        <div class="stage-grid" aria-hidden="true"></div>
+
+        <div class="project-copy">
+          <div class="project-identity">
+            <img
+              class="project-icon"
+              src="https://k-youngjae.github.io/classlog/assets/icon.png"
+              alt=""
+            >
+            <span>Windows desktop app</span>
           </div>
 
-          <p class="product-lead">
-            Teaching records,<br>kept together.
+          <div>
+            <p class="project-label">CLASSLOG</p>
+            <h2>One place for<br>the whole class.</h2>
+          </div>
+
+          <p class="project-summary">
+            Classes, attendance, assessments and student activity records —
+            kept in one continuous workflow.
           </p>
-          <p class="product-description">
-            A Windows app for managing classes, timetables, attendance,
-            assessments, and student activity records in one place.
-          </p>
 
-          <div class="product-actions">
-            <a class="primary-button" href="/classlog/">View project <span aria-hidden="true">→</span></a>
-            <a class="text-button" href="/classlog/privacy.html">Privacy Policy</a>
-          </div>
-
-          <div class="feature-line" aria-label="ClassLog features">
-            <span>Classes &amp; students</span>
-            <span>Attendance</span>
-            <span>Assessments</span>
-            <span>Activity records</span>
-          </div>
+          <a class="project-link" href="/classlog/">
+            Explore ClassLog
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
 
-        <a class="product-visual" href="/classlog/" aria-label="Open the ClassLog project page">
-          <div class="window-top" aria-hidden="true">
-            <i></i><i></i><i></i>
+        <a class="product-shot" href="/classlog/" aria-label="Open ClassLog">
+          <div class="shot-chrome">
+            <div class="shot-dots" aria-hidden="true"><i></i><i></i><i></i></div>
             <span>ClassLog</span>
+            <span>Attendance</span>
           </div>
-          <img src="/classlog/assets/screens/attendance.png" alt="ClassLog attendance screen">
+          <div class="shot-viewport">
+            <img
+              src="https://k-youngjae.github.io/classlog/assets/screens/attendance.png"
+              alt="ClassLog attendance screen"
+            >
+          </div>
         </a>
+
+        <div class="floating-tag tag-one" aria-hidden="true">ATTENDANCE</div>
+        <div class="floating-tag tag-two" aria-hidden="true">ASSESSMENT</div>
       </article>
+
+      <div class="project-meta reveal">
+        <div>
+          <span>Role</span>
+          <strong>Design & development</strong>
+        </div>
+        <div>
+          <span>Platform</span>
+          <strong>Windows</strong>
+        </div>
+        <div>
+          <span>Stack</span>
+          <strong>Tauri · React · Rust</strong>
+        </div>
+        <div>
+          <span>Status</span>
+          <strong>In development</strong>
+        </div>
+      </div>
     </section>
 
-    <section class="note shell">
-      <div class="note-line"></div>
-      <div class="note-content">
-        <p>More projects, when they’re ready.</p>
+    <section id="about" class="about-section">
+      <div class="about-index reveal">ABOUT</div>
+
+      <div class="about-copy reveal">
+        <p class="about-lead">
+          I design and build focused desktop software.
+        </p>
+        <p class="about-body">
+          This site is a home for independent projects as they take shape.
+          ClassLog is the first one here.
+        </p>
       </div>
+
+      <div class="about-mark reveal" aria-hidden="true">
+        <span>K</span>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <p class="contact-eyebrow reveal">GET IN TOUCH</p>
+      <a class="contact-link reveal" href="mailto:kyjdevelop@gmail.com">
+        kyjdevelop@gmail.com
+        <span aria-hidden="true">↗</span>
+      </a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell footer-inner">
-      <span>© 2026 K-youngjae</span>
-      <a href="mailto:kyjdevelop@gmail.com">kyjdevelop@gmail.com</a>
-    </div>
+  <footer class="footer">
+    <span>© 2026 K-youngjae</span>
+    <a href="/classlog/privacy.html">Privacy</a>
   </footer>
+
+  <script src="/script.js"></script>
 </body>
 </html>
