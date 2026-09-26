@@ -1,16 +1,16 @@
-const els = document.querySelectorAll('.reveal');
+const items = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
 
-  els.forEach((el) => io.observe(el));
+  items.forEach((item) => observer.observe(item));
 } else {
-  els.forEach((el) => el.classList.add('is-visible'));
+  items.forEach((item) => item.classList.add('is-visible'));
 }
