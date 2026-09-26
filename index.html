@@ -3,111 +3,119 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>K-youngjae — Independent Software</title>
+  <title>K-youngjae</title>
   <meta name="description" content="Independent software projects by K-youngjae.">
-  <meta name="theme-color" content="#f5f5f1">
+  <meta name="theme-color" content="#f7f7f4">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="K-youngjae — Independent Software">
+  <meta property="og:title" content="K-youngjae">
   <meta property="og:description" content="Independent software projects by K-youngjae.">
   <meta property="og:image" content="https://k-youngjae.github.io/classlog/assets/screens/attendance.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-  <header class="topbar">
-    <a class="wordmark" href="/" aria-label="K-youngjae home">K‑YOUNGJAE</a>
-    <nav class="topnav" aria-label="Primary">
+  <header class="site-header">
+    <a class="name" href="/">K-youngjae</a>
+    <nav>
       <a href="#work">Work</a>
       <a href="#about">About</a>
-      <a href="mailto:kyjdevelop@gmail.com">Email ↗</a>
+      <a href="mailto:kyjdevelop@gmail.com">Email</a>
     </nav>
   </header>
 
   <main>
-    <section class="intro">
-      <p class="eyebrow reveal">Independent software</p>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="kicker">Independent software</p>
+        <h1>Designer and developer<br>building small software.</h1>
+      </div>
 
-      <h1 class="intro-title reveal">
-        Small software.<br>
-        <span>Carefully made.</span>
-      </h1>
-
-      <div class="intro-bottom reveal">
-        <p>Personal software projects, designed and built independently.</p>
-        <a href="#work">Selected work ↓</a>
+      <div class="hero-side reveal">
+        <p>
+          Personal projects focused on useful desktop tools and thoughtful interfaces.
+        </p>
+        <span>Seoul · Korea</span>
       </div>
     </section>
 
-    <section id="work" class="work-section">
-      <div class="section-head reveal">
+    <section id="work" class="work">
+      <div class="section-heading reveal">
         <span>Selected work</span>
         <span>2026</span>
       </div>
 
-      <article class="project-stage reveal">
-        <div class="project-copy">
-          <div class="project-id">
-            <img src="/classlog/assets/icon.png" alt="">
-            <span>Windows desktop app</span>
+      <a class="project reveal" href="/classlog/">
+        <div class="project-info">
+          <div class="project-title-row">
+            <img src="/classlog/assets/icon.png" alt="" class="project-icon">
+            <div>
+              <p class="project-overline">Windows desktop app</p>
+              <h2>ClassLog</h2>
+            </div>
           </div>
 
-          <div class="project-main-copy">
-            <p class="project-label">CLASSLOG</p>
-            <h2>One place for<br>the whole class.</h2>
-            <p class="project-summary">
-              Classes, attendance, assessments and student activity records —
-              kept in one continuous workflow.
-            </p>
-            <a class="project-link" href="/classlog/">
-              Explore ClassLog <span aria-hidden="true">↗</span>
-            </a>
+          <p class="project-description">
+            A classroom record tool for classes, attendance,
+            assessments and student activity.
+          </p>
+
+          <div class="project-meta">
+            <span>Tauri</span>
+            <span>React</span>
+            <span>Rust</span>
           </div>
+
+          <span class="project-link">View project ↗</span>
         </div>
 
-        <a class="product-shot" href="/classlog/" aria-label="Open ClassLog">
-          <div class="shot-top">
-            <span>ClassLog</span>
-            <span>Attendance</span>
+        <div class="project-preview" aria-label="ClassLog attendance screen">
+          <div class="accent accent-one" aria-hidden="true"></div>
+          <div class="accent accent-two" aria-hidden="true"></div>
+          <div class="screen">
+            <img src="/classlog/assets/screens/attendance.png" alt="ClassLog attendance screen">
           </div>
-          <img
-            src="/classlog/assets/screens/attendance.png"
-            alt="ClassLog attendance screen"
-          >
-        </a>
-      </article>
-
-      <div class="project-meta reveal">
-        <div><span>Role</span><strong>Design & development</strong></div>
-        <div><span>Platform</span><strong>Windows</strong></div>
-        <div><span>Stack</span><strong>Tauri · React · Rust</strong></div>
-        <div><span>Status</span><strong>In development</strong></div>
-      </div>
-    </section>
-
-    <section id="about" class="about-section">
-      <p class="section-label reveal">About</p>
-
-      <div class="about-copy reveal">
-        <h2>I design and build focused desktop software.</h2>
-        <p>
-          This site is a home for independent projects as they take shape.
-          ClassLog is the first one here.
-        </p>
-      </div>
-    </section>
-
-    <section class="contact-section">
-      <p class="section-label reveal">Get in touch</p>
-      <a class="contact-link reveal" href="mailto:kyjdevelop@gmail.com">
-        kyjdevelop@gmail.com <span aria-hidden="true">↗</span>
+        </div>
       </a>
+    </section>
+
+    <section id="about" class="about">
+      <div class="section-heading reveal">
+        <span>About</span>
+        <span>02</span>
+      </div>
+
+      <div class="about-grid">
+        <p class="about-lead reveal">
+          I like software that has a clear job and stays out of the way.
+        </p>
+        <div class="about-body reveal">
+          <p>
+            I design and build personal software projects from interface to implementation.
+          </p>
+          <p>
+            This site is a small archive of that work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="section-heading reveal">
+        <span>Contact</span>
+        <span>03</span>
+      </div>
+
+      <div class="contact-row reveal">
+        <p>Have a question or want to get in touch?</p>
+        <a href="mailto:kyjdevelop@gmail.com">kyjdevelop@gmail.com ↗</a>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <span>© 2026 K-youngjae</span>
     <a href="/classlog/privacy.html">Privacy</a>
   </footer>
